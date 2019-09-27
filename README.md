@@ -1,61 +1,88 @@
-# Need to do some retesting 
+# Beautiful Tragedy Design System
 
-# Webpack-boilerplate
-## A boilerplate for Babel, SCSS, Webpack
+This will be fleshed out more as it's built. It'll be small at first, since I don't need that much for my portfolio.
 
-I created this, for work and personal projects. This isn't for any actual framework, but you might be able to set up REACTJS
+## Why
 
-__This repo includes__: 
-  -  webpack 
-      +  Create production ready projects
-      +  Minificaiton and catcation
-  -  SCSS
-  -  webpack-dev-server
-      +  allows you to have a dev server running, and will reload on changes to the HTML, SCSS, and JS
-  -  Babel
-  -  Mocha and Chia
-      +  Unit testing
-  -  Linting
-      +  stylelint
-      +  eslint
-      +  HTML linting
-  -  Loaders
-      +  HTML allows to have module HTML
-      +  SVG
-      +  File
-      +  Babel (nautrally)
-      +  Postcss/scss/css
-  -  aliases
-      +  '@components': HTML components
-      +  '@style': Style directory
-      +  '@fonts': Fonts directory
-      +  '@img': Images directory
-      +  '@js': Scripts/Js directory
-      +  '@':  Overall src directory
-  -  Documentation
-      +  Sassdoc and jsdoc have been added to the package.json
-      +  They have not been set up.
+I wanted to extend the things I've learned while creating a DS for work. This time for my brand and sites.
 
+## Things needed
 
-__Future__
-  -  Typescript is sort of set up, but more work and testing will have to be done
-  -  SCSS Unit testing
-  -  Allow REACT to work with this
-  -  See what happens with Angular
-  -  Hope that I can move .babelrc to the .config folder
-  -  Be able to create a npm module with this
-  -  Add routing that doesn't involve a framework (this is more of a learning exercise on how routing in JS works, so it won't be as amazing as angular or react-router)
-  -  See how jenkins can be integrated with ... It might just be adding a Jenkins file and making sure whatever server has Jenkins on it 🤷
+### V1
 
+These are what is needed for my portfolio
 
-__Problems__
-  -  HtmlWebpackPlugin.options does not work with the HTML loader. I've tried suggestions from what I could find and they didn't work.
-  -  Linting rules need some work
+- Typography
+  - headings
+  - body
+- Logos
+- Icons
+- MDC Ripple - only import
+- layout
+  - grid
+  - flex
+    - I'm not sure which one I really want to use
+  - containers
+- links
+- social
+- API output
+- Forms
+  - Inputs
+  - Buttons
+- Move the full page `<divs>` js to here
+- Full page navigation
+- Full Page sections
+- Helpers
+  - This is mostly automatically created from variables, maps, and mixins
 
-__Tips__
-  -  When importing node_modules remember to add ~ to the beginning of the package. For example, ~packagename/
+### V2
 
-## Helpful scripts
+Other pieces for other BT projects
+
+- header
+- footer
+- lists
+- Other Form elements
+- Image styles
+- cards
+- accordion
+- other navigation
+- Templates
+
+### What I wont place in here
+
+- No JS tests
+- Stock images/project images
+
+### How/ Methodology
+
+Atomic Design. I'm a big supporter of the Methodology.
+
+Atoms/Molecules/Organisms/Templates
+
+BEM naming convention. Classes can get a ... bit long but I like the thought process behind it.
+
+### Name Space
+
+.bt - for beautiful tragedy
+l- layout
+
+- grids/containers/responsive
+
+u- utility/helper
+
+- Helper classes
+
+c- component
+
+- sections
+
+### Tips
+
+- When importing node_modules remember to add ~ to the beginning of the package. For example, ~packagename/
+
+## Helpful NPM scripts
+
 npm run ...
 
   -  build
@@ -86,6 +113,6 @@ npm run ...
   -  delete-tests
         +  Deletes tests
         + "rm -rf ./tests/compiled/",
-  -  check-types        
+  -  check-types
         +  check typescripts
         +  "tsc",
