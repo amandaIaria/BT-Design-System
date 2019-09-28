@@ -49,6 +49,59 @@ Other pieces for other BT projects
 - other navigation
 - Templates
 
+### Components
+
+#### Atoms
+
+Basics
+
+Forms
+
+- Inputs - Native
+- Buttons
+- Labels
+
+Grid
+
+Containers
+
+Typography
+
+- Body
+- headings
+- links
+- lists
+
+Icons - Font Awesome
+
+Images
+
+#### Molecules
+
+Forms
+
+- Label + Inputs
+
+Navigation
+
+#### Organisms
+
+Full Page Sections
+
+Footers
+
+Headers
+
+Accordion
+
+Cards
+
+#### Utility
+
+Color
+
+Spacing
+
 ### What I wont place in here
 
 - No JS tests
@@ -85,34 +138,34 @@ c- component
 
 npm run ...
 
-  -  build
+- build
         +  Regular production build
         +   "rm -rf ./production/ && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
-  -  build-check
+- build-check
         +  Bulds and checks the typescript
         +  "rm -rf ./production/ && npm run check-types && webpack --mode production --config ./.configs/webpack/webpack.production.config.js",
-  -  dev
+- dev
         +  Your watch while you make
         +  "webpack-dev-server --mode development --config ./.configs/webpack/webpack.dev.config.js",
-  -  test-watch  
+- test-watch  
         +  Watch while you make your tests
         +  possible needs some work
         +  "webpack --mode development -w --progress --colors --config ./.configs/webpack/webpack.test.config.js",
-  -  test-build   
+- test-build
         +  builds your tests and prefoms
         +  "npm run delete-tests && webpack  --mode production --progress --colors --config ./.configs/webpack/webpack.test.config.js",
-  -  lint-style
+- lint-style
         +  Check your styles
         +  should be in the watch command too.
         +  "sass-lint -c .sass-lint.yml 'src/**/*.scss' -v -q",
-  -  test-and-lint
+- test-and-lint
         +  Builds tests and lints your styles
         +  "npm run lint-style && npm run test-build",
-  -  test-type-and-lint
+- test-type-and-lint
         + . Need to make command
-  -  delete-tests
+- delete-tests
         +  Deletes tests
         + "rm -rf ./tests/compiled/",
-  -  check-types
-        +  check typescripts
-        +  "tsc",
+- check-types
+      +  check typescripts
+      +  "tsc",
