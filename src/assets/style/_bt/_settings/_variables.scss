@@ -1,0 +1,430 @@
+// Theme Variables
+// Nameing convention
+// $ai-{page}-{place}-{element}
+// These are all the variables in the DS. Properties have become variables to help with themeing.
+
+// Basics
+$ai-basics-body-color: map-get($map: $colors, $key: 'flatblack') !default;
+$ai-basics-body-margin: 0 !default;
+$ai-basics-body-padding: 0 !default;
+$ai-basics-material-icons: -4px !default;
+$ai-basics-ul-margin: 0 !default;
+$ai-basics-ul-padding-left: 16px !default;
+$ai-basics-ul-li-margin-bottom: 8px !default;
+$ai-basics-margin: $margin !default;
+
+// Buttons
+$ai-button-password-icon-background: transparent !default;
+$ai-button-password-icon-focus: map-get($map: $colors, $key: 'grey1' ) !default;
+$ai-button-password-icon-font-size: 37px !default;
+$ai-button-password-icon-color: map-get($map: $colors, $key: 'grey1' ) !default;
+$ai-button-password-icon-margin: 0 !default;
+$ai-button-password-icon-padding: 0 !default;
+$ai-button-flat-border-color: transparent !default;
+$ai-button-flat-background-color: none !default;
+$ai-button-flat-border-radius: 0 !default;
+$ai-button-ghost-focus: map-get($map: $colors, $key: 'white' )  !default;
+$ai-button-ghost-background-color: none !default;
+$ai-button-loader-solid: map-get($map: $colors, $key: 'green1' )  !default;
+$ai-button-loader-flat: map-get($map: $colors, $key: 'green1' )  !default;
+$ai-button-loader-color: map-get($map: $colors, $key: 'green1' )  !default;
+$ai-button-withicon-padding-right: 16px !default;
+$ai-button-withicon-padding-left: 16px !default;
+$ai-button-remove-color: map-get($map: $colors, $key: 'white' )  !default;
+$ai-button-remove-background: map-get($map: $colors, $key: 'red1' )  !default;
+$ai-button-remove-border-color: map-get($map: $colors, $key: 'red1' )  !default;
+$ai-button-reset-color: map-get($map: $colors, $key: 'red1' )  !default;
+$ai-button-reset-focus-color: map-get($map: $colors, $key: 'white' )  !default;
+$ai-button-reset-focus-background: map-get($map: $colors, $key: 'red1' )  !default;
+$ai-button-reset-focus-border-color: map-get($map: $colors, $key: 'red1' )  !default;
+$ai-button-bordersize: $ai-border-default !default;
+$ai-button-padding: 8px !default;
+$ai-button-borderradius: 5px !default;
+$ai-button-labelfontsize: 14px !default;
+$ai-button-label-line-size: 24px !default;
+$ai-button-mbfix: 4px !default;
+$ai-button-size-wxs: 160px !default;
+$ai-button-size-wsm: 200px !default;
+$ai-button-size-wmd: 240px !default;
+$ai-button-size-wlg: 280px !default;
+$ai-button-size-pxs: 0 - $ai-border-default-size !default;
+$ai-button-size-psm: 4px - $ai-border-default-size !default;
+$ai-button-size-pmd: 8px - $ai-border-default-size !default;
+$ai-button-size-plg: 12px - $ai-border-default-size !default;
+$ai-button-size-pdefault: 12px - $ai-border-default-size !default;
+$ai-button-password-icon-color: map-get($borderRadius, 'grey1') !default;
+$ai-button-password-icon-color-active: $active-color !default;
+$ai-button-size-default: auto !default;
+$ai-flat-button-hover: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-button-text-transform: uppercase !default;
+$ai-button-font-weight: bold !default;
+$ai-button-mixinflat-background: transparent !default;
+$ai-button-mixinsolid-bs: none !default;
+$ai-button-mixinghost-background: transparent !default;
+$ai-button-sizexs-fs: 12px !default;
+$ai-button-sizexs-lh: 24px !default;
+$ai-button-sizesm-fs: 12px !default;
+$ai-button-sizesm-lh: 24px !default;
+
+// Captions
+$ai-caption-error-color: $error-color !default;
+$ai-caption-error-font-style: italic !default;
+
+
+// Iframe
+$ai-iframe-container-padding: 56% !default;
+$ai-iframe-container-width: 100% !default;
+$ai-iframe-video-width: 100% !default;
+$ai-iframe-video-height: 100% !default;
+
+// Images
+$ai-image-imageid-background: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-image-imageid-padding: 4px !default;
+$ai-image-imagelink-background: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-image-imagelink-padding: 4px !default;
+$ai-image-imagelink-hover-background: $active-color !default;
+$ai-image-small-width: 100px !default;
+$ai-image-medium-width: 300px !default;
+$ai-image-large-width: 600px !default;
+$ai-image-heroimage-width: 1200px !default;
+$ai-image-heroimage-margintop: -16px !default;
+$ai-image-fixedlarge-height: 600px !default;
+$ai-image-fixedmedium-height: 300px !default;
+$ai-image-fixedsmall-height: 100px !default;
+$ai-image-fixedhero-height: 400px !default;
+
+// Links
+$ai-link-color: $link-color !default;
+$ai-link-active-color: map-get($map: $colors, $key: 'blue1' )  !default;
+$ai-link-socialbar-padding: 0 !default;
+$ai-link-socialbar-paddingtop: 16px !default;
+$ai-link-socialbrands-fontsize: 32px !default;
+$ai-link-socialbrands-color: map-get($map: $colors, $key: 'grey1' )  !important !default;
+$ai-link-linkedin-hover-color: #0077b5 !important !default;
+$ai-link-facebook-hover-color: #3b5998 !important !default;
+$ai-link-youtube-hover-color: #ff0000 !important !default;
+$ai-link-twitter-hover-color: #1da1f2 !important !default;
+$ai-link-instagram-hover-color: #ffdc80 !important !default;
+$ai-link-light-color: map-get($map: $colors, $key: 'white' )  !default;
+$ai-link-light-active-color: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-link-icon-padding: $margin /2 !default;
+
+// Label
+$ai-labels-mixineffectunderline-border: none !default;
+$ai-labels-mixincontainer-fs: 12px !default;
+$ai-labels-mixincontainer-lh: 16px !default;
+$ai-labels-floating-fw: 400 !default;
+$ai-labels-floating-left: 16px !default;
+$ai-labels-floating-top: 16px !default;
+$ai-labels-floating-width: calc(100% - 17px) !default;
+$ai-labels-container-padding: 0 8px !default;
+$ai-labels-container-br: map-get($borderRadius, 'one') !default;
+$ai-labels-container-bsb: 0 0 0px 1px  !default;
+$ai-labels-container-bsu: 0px -1px 0px 0px  !default;
+$ai-labels-container-sfy: -8px !default;
+$ai-labels-container-sfx: -8px !default;
+$ai-labels-container-sfs: 0.75 !default;
+
+// Lists
+$ai-lists-unordered-position: outside !default;
+$ai-lists-unordered-padding: 0 !default;
+$ai-lists-ordered-position: outside !default;
+$ai-lists-ordered-padding: 0 !default;
+$ai-lists-ordered-margin-left: -6px !default;
+$ai-lists-nostyle-marginleft: 0 !default;
+
+// Loader
+$ai-loader-default-height: 24px !default;
+$ai-loader-default-width: 24px !default;
+$ai-loader-sm-height: 12px !default;
+$ai-loader-sm-width: 12px !default;
+$ai-loader-border-radius: map-get($borderRadius, 'three') !default;
+
+// Linemovement
+$ai-linemovement-border-color: map-get($map: $colors, $key: 'green1' )  !default;
+$ai-linemovement-border-width: 2px !default;
+
+// Table
+$ai-table-col-bordercollapse: collapse !default;
+$ai-table-col-padding: 16px !default;
+$ai-table-mobilebg-background-ff: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.57) 57%, rgba(255,255,255,0.0) 75%, rgba(255,255,255,1) 100%) !default; /* FF3.6-15 */
+$ai-table-mobilebg-background-chrome: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.0) 57%,rgba(255,255,255,0.0) 75%,rgba(255,255,255,1) 100%) !default; /* Chrome10-25,Safari5.1-6 */
+$ai-table-mobilebg-background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.0) 75%, white 100%) !default;
+$ai-table-mobilebg-background-ie: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ) !default; /* IE6-9 */
+$ai-table-typespan-background: $active-color !default;
+$ai-table-typespan-color: map-get($map: $colors, $key: 'white' )  !default;
+$ai-table-typespan-fontsize: 14px !default;
+$ai-table-typespan-lineheight: 24px !default;
+$ai-table-typespan-padding: 2px 8px !default;
+$ai-table-title-color: $active-color !default;
+$ai-table-title-fontsize: 14px !default;
+$ai-table-title-lineheight: 24px !default;
+$ai-table-title-padding: 16px 0 !default;
+$ai-table-title-width: auto !default;
+$ai-table-date-width: 88px !default;
+$ai-table-date-textalign: right !default;
+$ai-table-datespan-color: map-get($borderRadius, 'grey1') !default;
+$ai-table-datespan-fontsize: 12px !default;
+$ai-table-datespan-lineheight: 16px !default;
+$ai-table-view-width: 49px !default;
+$ai-table-viewspan-fontsize: 10px !default;
+$ai-table-viewspan-color: $active-color !default;
+$ai-table-viewspan-marginright: 4px !default;
+$ai-table-viewspan-texttransform: uppercase !default;
+$ai-table-viewspan-i-color: $active-color !default;
+$ai-table-viewspan-i-fontsize: 24px !default;
+$ai-table-bordered: thin solid map-get($borderRadius, 'grey1') !default;
+$ai-table-clickable-background: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-table-documents-width: 832px !default;
+$ai-table-documentstype-width: 24px !default;
+$ai-table-documentstypespan-background: $active-color !default;
+$ai-table-documentstypespan-color: map-get($map: $colors, $key: 'white' )  !default;
+$ai-table-documentstypespan-fontsize: 14px !default;
+$ai-table-documentstypespan-lineheight: 24px !default;
+$ai-table-documentstypespan-padding: 2px 8px !default;
+$ai-table-documentstitle-color: $active-color !default;
+$ai-table-documentstitle-fontsize: 14px !default;
+$ai-table-documentstitle-lineheight: 24px !default;
+$ai-table-documentstitle-padding: 16px 0 !default;
+$ai-table-documentstitle-width: auto !default;
+$ai-table-documentsdate-width: 88px !default;
+$ai-table-documentsdate-textalign: right !default;
+$ai-table-documentsdatespan-color: map-get($borderRadius, 'grey1') !default;
+$ai-table-documentsdatespan-fontsize: 12px !default;
+$ai-table-documentsdatespan-lineheight: 16px !default;
+$ai-table-documentsview-width: 49px !default;
+$ai-table-documentsviewspan-fontsize: 10px !default;
+$ai-table-documentsviewspan-color: $active-color !default;
+$ai-table-documentsviewspan-marginright: 4px !default;
+$ai-table-documentsviewspan-i-color: $active-color !default;
+$ai-table-documentsviewspan-i-fontsize: 24px !default;
+$ai-table-traditionalheadcol-color: map-get($borderRadius, 'grey1') !default;
+$ai-table-traditionalheadcol-fontweight: 400 !default;
+$ai-table-traditionalheadcol-fontsize: 14px !default;
+$ai-table-traditionalheadcol-lineheight: 24px !default;
+$ai-table-traditionalbodycol-fontweight: 400px !default;
+$ai-table-traditionalbodycol-fontsize: 12px !default;
+$ai-table-traditionalbodycol-lineheight: 16px !default;
+
+// Breadcrumbs
+$ai-breadcrumbs-crumb-content: '\e5cc' !default;
+$ai-breadcrumbs-crumb-fontfamily: 'Material Icons', sans-serif !default;
+$ai-breadcrumbs-crumb-color: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-breadcrumbs-smallcrumb-fontsize: 12px !default;
+$ai-breadcrumbs-smallcrumb-lineheight: 16px !default;
+$ai-breadcrumbs-smallcrumbafter-fontsize: 22px !default;
+$ai-breadcrumbs-mediumcrumb-fontsize: 14px !default;
+$ai-breadcrumbs-mediumcrumb-lineheight: 24px !default;
+$ai-breadcrumbs-mediumcrumbafter-fontsize: 22px !default;
+$ai-breadcrumbs-largecrumb-fontsize: 18px !default;
+$ai-breadcrumbs-largecrumb-lineheight: 32px !default;
+$ai-breadcrumbs-largecrumbafter-fontsize: 45px !default;
+
+// Input
+$ai-inputfield-customcalendar-background: map-get($map: $colors, $key: 'white' )  !default;
+$ai-inputfield-customcalendar-color: $body-color !default;
+$ai-inputfield-customcalendar-maxwidth: 312px !default;
+$ai-inputfield-customcalendar-padding: 16px !default;
+$ai-inputfield-customcalendar-margin: 16px !default;
+$ai-inputfield-customcalendar-margintop: -40px !default;
+$ai-inputfield-customcalendar-width: 100% !default;
+$ai-inputfield-customcalendar-zindex: 77 !default;
+$ai-inputfield-customcalendar-boxshadow: map-get($boxShadow, 'one') !default;
+$ai-inputfield-customcalendarday-height: 32px !default;
+$ai-inputfield-customcalendarday-width: 32px !default;
+$ai-inputfield-customcalendarda-padding: 0 !default;
+$ai-inputfield-customcalendarda-margin: 0 !default;
+$ai-inputfield-customcalendarday-borderradius: map-get($borderRadius, 'three') !default;
+$ai-inputfield-customcalendardayactive-background: $active-color !default;
+$ai-inputfield-customcalendardayactive-color: map-get($map: $colors, $key: 'white' )  !default;
+$ai-inputfield-customcalendarheader-paddingleft: 10px !default;
+$ai-inputfield-customcalendarheader-paddingright: 6px !default;
+$ai-inputfield-customcalendarheader-th-fontweight: 400 !default;
+$ai-inputfield-customcalendarheader-th-height: 32px !default;
+$ai-inputfield-customcalendarheader-th-width: 32px !default;
+$ai-inputfield-customcalendarheader-th-verticalalign: bottom !default;
+$ai-inputfield-customcalendartable-width: 100% !default;
+$ai-inputfield-customcalendartable-td-textalign: center !default;
+$ai-inputfield-customcalendartable-month-color: map-get($colors, 'grey1') !default;
+$ai-inputfield-customcalendartable-month-fontsize: 18px !default;
+$ai-inputfield-customcalendartable-month-fontweight: bold !default;
+$ai-inputfield-customcalendartable-month-texttransform: uppercase !default;
+$ai-inputfield-customcalendartable-month-lineheight: 29px !default;
+$ai-inputfield-customcalendartable-callendarrowselected-background: $active-color !default;
+$ai-inputfield-customcalendartable-monthfocus-background: $active-color !default;
+$ai-inputfield-customcalendartable-monthfocus-color: map-get($map: $colors, $key: 'white' )  !default;
+$ai-inputfield-customcalendartable-hr-margin: -$margin 0 !default;
+$ai-inputfield-customcalendaryear-border: 0 !default;
+$ai-inputfield-customcalendaryear-fontsize: 16px !default;
+$ai-inputfield-customcalendardate-width: calc(100% - 50px) !default;
+$ai-inputfield-customcalendardate-content: '\e916' !default;
+$ai-inputfield-customcalendarcontainer-color: map-get($colors, 'grey1') !important !default;
+$ai-inputfield-customcalendarnative-opacity: 0 !default;
+$ai-inputfield-customcalendartime-content: '\e192' !default;
+$ai-inputfield-customcalendarbg-height: 100vh !default;
+$ai-inputfield-customcalendarbg-width: 100vw !default;
+$ai-inputfield-customcalendarbg-top: 0 !default;
+$ai-inputfield-customcalendarbg-left: 0 !default;
+$ai-inputfield-nolabel-padding: 0 !default;
+$ai-inputfield-password-opacity: 1 !default;
+$ai-text-field-height: 56px !default;
+$ai-text-field-border-bottom-color: #333 !default;
+$ai-text-field-containerborderradius: 0 !default;
+$ai-text-field-label-size-focus: 10px !default;
+$ai-text-field-label-size: 14px !default;
+$ai-text-field-label-color: #333 !default;
+$ai-text-field-label-color-focus: map-get($map: $colors, $key: 'grey1' )   !default;
+$ai-text-field-inputfontsize: 16px !default;
+$ai-text-field-inputheight: 56px !default;
+$ai-text-field-containerpadding: 16px 8px 6px !default;
+$ai-text-field-border: $ai-border-default !default;
+$ai-text-field-inputlineheight: 24px !default;
+$ai-textarea-padding: 24px 8px 16px 8px !default;
+$ai-caption-margin-top: $margin /4 !default;
+$ai-caption-margin-left: $margin /2 !default;
+$ai-input-field-textarea-height: 104px !default;
+$ai-textarea-margin-bottom: $margin /2 !default;
+$ai-input-trailing-icon-font-size: 16px !default;
+$ai-input-trailing-icon-padding: 0 !default;
+$ai-input-leading-icon-font-size: 16px !default;
+$ai-input-leading-icon-padding: 4px !default;
+$ai-input-leading-focus-transform: 10px !default;
+$ai-input-leading-span-padding: $margin !default;
+$ai-text-icon-color: map-get($borderRadius, 'grey1') !default;
+$ai-text-icon-font-family: 'Material Icons', sans-serif !default;
+$ai-text-icon-font-size: 24px !default;
+$ai-text-icon-right-pos: 16px !default;
+$ai-text-icon-active-color: $active-color !default;
+$ai-time-icon: '\e192' !default;
+$ai-date-icon: '\e916' !default;
+$ai-textarea-height: 128px !default;
+$ai-inpitmixin-as: flex-end !default;
+$ai-inpitmixin-background: none !default;
+$ai-inpitmixin-border: none !default;
+$ai-inpitmixin-color: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-inpitmixin-fw: 400 !default;
+$ai-inpitmixin-mfia: end !default;
+$ai-inpitmixin-mb: 6px !default;
+$ai-inpitmixin-td: inherit !default;
+$ai-inpitmixin-tt: inherit !default;
+$ai-inpitmixin-appearance: none !default;
+$ai-inpitmixin-br: 0 !default;
+$ai-inpitmixin-transition: opacity 150ms ease !default;
+$ai-inpitmixin-transition1: 0.5s ease !default;
+$ai-inpitmixin-transform: translateY(0) !default;
+
+// Radio and checkboxes
+$ai-radio-material-font-size: 20px !default;
+$ai-radio-default-font-size: 16px !default;
+$ai-radio-icon-padding: 6px !default;
+$ai-radio-icon-margin-fix: -4px !default;
+$ai-radio-label-font-size: 14px !default;
+$ai-radio-label-line-height: 24px !default;
+$ai-checkbox-material-font-size: 20px !default;
+$ai-checkbox-default-font-size: 18px !default;
+$ai-check-icon-padding: 16px /2 !default;
+$ai-check-icon-margin-fix: -4px !default;
+$ai-checkbox-label-font-size: 14px !default;
+$ai-checkbox-label-line-height: 24px !default;
+$ai-radio-check-icon-color: map-get($colors, 'grey1') !default;
+$ai-radio-input-top: 2px !default;
+$ai-radio-input-before-fontweight: 400 !default;
+$ai-radio-native-checked-content: '\e837' !default;
+$ai-radio-native-checked-fontweight: 900 !default;
+$ai-radio-container-marginright: 8px !default;
+$ai-radio-material-before-content: '\e836' !default;
+$ai-radio-default-before-content: '\f111' !default;
+$ai-radio-default-before-fontweight: 900 !default;
+$ai-radio-nativematerial-checked-content:  '\e5ca' !default;
+$ai-radio-nativedefault-checked-content:  '\f14a' !default;
+$ai-check-material-before-content: '\e835' !default;
+$ai-check-default-before-content: '\f0c8' !default;
+$ai-checkradio-before-borderradius: map-get($borderRadius, 'three') !default;
+$ai-checkradio-before-marginright: -($margin / 2) !default;
+
+// Select
+$ai-select-icon-font-size: 24px !default;
+$ai-select-icon-color: map-get($borderRadius, 'grey1') !default;
+$ai-select-icon-right-pos: 16px !default;
+$ai-select-icon-content: '\e313' !default;
+$ai-select-icon-font-family: 'Material Icons', sans-serif !default;
+$ai-select-menu-background: map-get($map: $colors, $key: 'white' )  !default;
+$ai-select-menu-width: 100% !default;
+$ai-select-menu-top: 0px !default;
+
+$ai-select-menu-box-shadow: map-get($boxShadow, 'one') !default;
+$ai-select-menu-li-color: $body-color !default;
+$ai-select-menu-li-background:  map-get($map: $colors, $key: 'white' )  !default;
+$ai-select-menu-li-padding: 12px $margin !default;
+$ai-select-menu-li-background-hover: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-select-menu-li-background-focus: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-select-menu-input-padding-top: 24px !default;
+$ai-select-menu-input-color: map-get($colors, 'black') !default;
+$ai-select-menu-margintop: -56px !default;
+$ai-select-menu-nolabel-padding: 0 !default;
+$ai-select-menu-focus-outline: 0 !default;
+$ai-select-focus-outline: 0 !default;
+
+// Feedback ---
+$ai-feedback-hover-weight: 0.5px 0 0px $body-color, -0.5px 0 0px $body-color  !default;
+$ai-feedback-close-font-size: 16px !default;
+$ai-feedback-close-position: relative !default;
+$ai-feedback-close-valign: middle !default;
+$ai-feedback-close-top: initial !default;
+$ai-feedback-close-right: initial !default;
+$ai-feedback-container-border: $ai-border-default !default;
+$ai-feedback-icon-ml: -8px !default;
+$ai-feedback-iconcontaineri-fs: 32px !default;
+$ai-feedback-closei-top: 0 !default;
+$ai-feedback-closei-right: 0 !default;
+$ai-feedback-content-color: $body-color !default;
+$ai-feedback-content-fs: 14px !default; 
+$ai-feedback-linkhover-fw: bold !default;
+
+
+// Modal
+$ai-modal-display: grid !default;
+$ai-modal-ai: center !default;
+$ai-modal-top: 0 !default;
+$ai-modal-bottom: 0 !default;
+$ai-modal-left: 0 !default;
+$ai-modal-right: 0 !default;
+$ai-modal-zi: 999 !default;
+$ai-modal-background-background: rgba(map-get($map: $colors, $key: 'grey1' ) , 0.9) !default;
+$ai-modal-background-height: 100vh !default;
+$ai-modal-background-width: 100vw !default;
+$ai-modal-background-zi: 1 !default;
+$ai-modal-close-color: map-get($colors, 'grey1') !default;
+$ai-modal-close-float: right !default;
+$ai-modal-close-padding: 16px !default;
+$ai-modal-close-mt: -20px !default;
+$ai-modal-close-mr: -16px !default;
+$ai-modal-container-background: map-get($map: $colors, $key: 'white' )  !default;
+$ai-modal-container-br: map-get($borderRadius, 'one') !default;
+$ai-modal-container-color: map-get($colors, 'grey1') !default;
+$ai-modal-container-margin: auto !default;
+$ai-modal-container-minwh: 320px !default;
+$ai-modal-container-maxw: 512px !default;
+$ai-modal-container-width: 100% !default;
+$ai-modal-container-zi: 2 !default;
+$ai-modal-content-background: map-get($map: $colors, $key: 'white' )  !default;
+$ai-modal-header-padding: 16px 0 !default;
+$ai-modal-header-fs: 18px !default;
+$ai-modal-header-lh: 24px !default;
+$ai-modal-header-border-bottom: 2px solid map-get($borderRadius, 'grey1') !default;
+$ai-modal-header-tt: uppercase !default;
+$ai-modal-header-margin: 0 !default;
+$ai-modal-header-va: bottom !default;
+$ai-modal-footer-background: map-get($map: $colors, $key: 'white' )  !default;
+$ai-modal-footer-align-items: center !default;
+$ai-modal-footer-display: grid !default;
+$ai-modal-footer-gtc: auto 1fr auto !default;
+$ai-modal-footer-td: none !default;
+$ai-modal-footer-fs: 32px !default;
+$ai-modal-footerhover-background: map-get($map: $colors, $key: 'grey1' )  !default;
+$ai-modal-footerhover-ts: none !important !default;
+$ai-modal-footerdesc-fs: 14px !default;
+$ai-modal-footerdesc-lh: 18px !default;
+$ai-modal-footersec-color: map-get($map: $colors, $key: 'grey1' )  !default;
+
+

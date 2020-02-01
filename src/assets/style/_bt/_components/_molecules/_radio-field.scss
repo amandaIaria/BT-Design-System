@@ -1,0 +1,85 @@
+// 
+// Radio Field
+// 
+// Various Radio styles.
+// 
+// Styleguide Components - Molecules - Radio Field
+// 
+
+
+.aic-m-radio-field {
+  $self: &;
+
+  &__input {
+    top: $ai-radio-input-top;
+    position: relative;
+
+    &:before {
+      font-weight: $ai-radio-input-before-fontweight;
+      padding: $ai-radio-icon-padding;
+      margin-left: $ai-radio-icon-margin-fix;
+    }
+  }
+
+  &__label {
+    font-size: $ai-radio-label-font-size;
+    line-height: $ai-radio-label-line-height;
+    display: inline-block;
+  }
+
+  &__native-control {
+    @extend .aic-a-input__radio;
+
+    &:checked + #{$self}__input {
+      &:before {
+        color: $active-color;
+      }
+    }
+
+    &:checked + #{$self}__input#{$self}--material {
+      &:before {
+        content: $ai-radio-native-checked-content;
+      }
+    }
+
+    &:checked + #{$self}__input#{$self}--default {
+      &:before {
+        font-weight: $ai-radio-native-checked-fontweight;
+      }
+    }
+  }
+
+  &__container {
+    & > div:first-child {
+      margin-right: $ai-radio-container-marginright;
+    } 
+  }
+
+  &--material {
+    vertical-align: middle;
+
+    &:before {
+      font-family: 'Material Icons', sans-serif;
+      content: $ai-radio-material-before-content;
+      font-size: $ai-radio-material-font-size;
+    }
+  }
+
+  &--default {
+    vertical-align: middle;
+
+    &:before {
+      font-family: 'Font Awesome 5 Free', sans-serif;
+      content: $ai-radio-default-before-content;
+      font-size: $ai-radio-default-font-size;
+    }
+  }
+
+  &__container:checked {
+    #{$self}__input {
+      &:before {
+        font-weight: $ai-radio-default-before-fontweight;
+      }
+    }
+  }
+}

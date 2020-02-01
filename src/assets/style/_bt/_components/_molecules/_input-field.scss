@@ -1,0 +1,130 @@
+// 
+// Textbox, Inputs
+// 
+// A component for the label and input used together.
+// 
+// Label, input, helper text
+// Organism
+// component
+// 
+// A component that includes the label and input, but also helper text
+// 
+// This is organized by type. Input, textarea, etc
+// 
+// Styleguide Components - Molecule - Textbox
+// 
+
+.aic-a-m-input-field {
+  $self: &;
+  box-sizing: border-box;
+  overflow: visible;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  will-change: opacity, transform, color;
+
+  
+  &__input-container {
+    @extend .aic-a-label__container;
+  }
+
+  &__input { 
+    @extend .aic-a-input__input;
+  }
+
+  &__label {
+    @extend .aic-a-label__floating;
+  }
+
+  &__native {
+    opacity: 0;
+  }
+
+  &__textarea-container {
+    @extend .aic-a-label__textarea-container;
+  }
+
+  &__textarea {
+    @extend .aic-a-input__textarea;
+  }
+
+  &--bordered {
+    @extend .aic-a-label--bordered;
+  }
+
+
+  &--disabled {
+    color: $active-color;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  &--error {
+    @extend .aiu-states-error;
+  }
+
+  &#{$self}--textarea#{$self} {
+    // float: left;
+  }
+
+  &--inline {
+    clear: both;
+    height: auto;
+    display: flex;
+    align-items: center;
+
+    & > * {
+      float: left;
+    }
+  }
+
+  &--no-label {
+    padding: $ai-inputfield-nolabel-padding;
+  }
+
+  &--textarea {
+    min-height: $ai-input-field-textarea-height;
+    margin-bottom: $ai-textarea-margin-bottom;
+    @extend .aic-a-label__textarea-container;
+  }
+
+  &--with-leading-icon {
+    i {
+      font-size: $ai-input-leading-icon-font-size;
+    }
+
+    input {
+      padding-left: $ai-input-leading-icon-padding;
+    }
+
+    &#{$self}--focused {
+      i {
+        transform: translateY($ai-input-leading-focus-transform);
+      }
+    }
+    
+    &:not(#{$self}--focused) { 
+      span {
+        padding-left: $ai-input-leading-span-padding;
+      }
+    }
+  }
+
+  &--with-trailing-icon {
+    i {
+      font-size: $ai-input-trailing-icon-font-size;
+      padding: $ai-input-trailing-icon-padding;
+    }
+  }
+
+  &__input-container:focus,
+  &__input-container:focus-within,
+  &--focused {
+    @extend .aic-a-label--focus-container;
+
+    .aic-a-button__password {
+      opacity: $ai-inputfield-password-opacity;
+    }
+  }
+}

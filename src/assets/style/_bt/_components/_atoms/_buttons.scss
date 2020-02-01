@@ -1,0 +1,79 @@
+// 
+// Buttons
+// 
+// Various button styles.
+// 
+// Markup: 
+//  
+// (a new modifiers section)
+// :hover - When user hovers over button.
+// :focus - When button is focused.
+// .aic-button--small - A small button.
+// .button--large - A large button.
+// 
+// Styleguide Components - Atoms - Buttons
+// 
+
+.aic-a-button {
+  $self: &;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  @include transition($ai-transition);
+
+  // if we don't need to extend it then use this method and map
+  // @include create-classes($buttons, '--', '-');
+  // @include create-classes($buttons-sizes, '--', '-');
+
+  &__label {
+    vertical-align: middle;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &--close {
+    font-size: $ai-button-password-icon-font-size;
+  }
+
+  &--default {
+    padding-bottom: $ai-button-size-pdefault;
+    padding-top: $ai-button-size-pdefault;
+    width: $ai-button-size-default;
+  }
+  
+  &--remove {
+    color: $ai-button-remove-color;
+    background: $ai-button-remove-background;
+    border-color: $ai-button-remove-border-color;
+  }
+
+  &--reset {
+    color: $ai-button-reset-color;
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      color: $ai-button-reset-focus-color;
+      background: $ai-button-reset-focus-background;
+      border-color: $ai-button-reset-focus-border-color;
+    }
+  }
+
+  &--primary {
+    //
+  }
+
+  &--secondary {
+    //
+  }
+
+  &--tertiary {
+    //
+  }
+}
+
+

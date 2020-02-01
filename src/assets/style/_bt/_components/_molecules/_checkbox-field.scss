@@ -1,0 +1,118 @@
+// 
+// Checkbox Field
+// 
+// Various Typography styles.
+// 
+// Styleguide Components - Molecules - Checkbox Field
+// 
+
+.aic-m-checkbox-field {
+  $self: &;
+
+  &__input:before {
+    font-weight: 400;
+    padding: $ai-check-icon-padding;
+    margin-left: $ai-check-icon-margin-fix;
+  }
+
+  &__label {
+    font-size: $ai-checkbox-label-font-size;
+    line-height: $ai-checkbox-label-line-height;
+  }
+
+  &__native-control {
+    @extend .aic-a-input__checkbox;
+
+    &:checked + #{$self}__input#{$self}--material {
+      &:before {
+        content: $ai-radio-nativematerial-checked-content;
+      }
+    }
+
+    &:checked + #{$self}__input#{$self}--default {
+      &:before {
+        font-weight: 900;
+        content: $ai-radio-nativedefault-checked-content;
+      }
+    }
+  }
+
+  &--default {
+    vertical-align: middle;
+
+    &:before {
+      font-family: 'Font Awesome 5 Free', sans-serif;
+      content: $ai-check-default-before-content;
+      font-size: $ai-checkbox-default-font-size;
+    }
+  }
+
+  &--material {
+    vertical-align: sub;
+
+    &:before {
+      font-family: 'Material Icons', sans-serif;
+      content: $ai-check-material-before-content;
+      font-size: $ai-checkbox-material-font-size;
+    }
+  }
+
+.aic-checkbox-field,
+.aic-radio-field {
+  &__nat.ai-control:disabled {
+    & + .aic-checkbox-field__input,
+    & + .aic-radio-field__input {
+      &:before {
+        color: $active-color;
+        cursor: not-allowed;
+      }
+    }
+  }
+.ai{
+  &__nat.ai-control:checked {
+    & + .aic-checkbox-field__input,
+    & + .aic-radio-field__input {
+      &:before {
+        color: $active-color;
+      }
+    }.ai
+    &:disa.aid {
+      & + .aic-checkbox-field__input,
+      & + .aic-radio-field__input {
+        &:before {
+          color: $active-color;
+        }
+      }
+    }
+  }
+
+  &:focus-within,
+  &__nat.ai-control:focus,
+  &__nat.ai-control:active:enabled {
+    & + .aic-checkbox-field__input,
+    & + .aic-radio-field__input {
+      &:before{
+        background: $active-color;;
+      }
+    }
+  }
+
+  &__input {
+    box-sizing: content-box;
+    display: inline;
+    @include transition($ai-transition);
+
+    &:before {
+      border-radius: $ai-checkradio-before-borderradius;
+      color: $ai-radio-check-icon-color;
+      margin-left: $ai-checkradio-before-marginright;
+    }
+
+    &:hover {
+      &:before {
+        color: $active-color;;
+        cursor: pointer;
+      }
+    }
+  }
+}}}

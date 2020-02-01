@@ -1,0 +1,79 @@
+$colors: (
+  'white': #ffffff,
+  'grey1': #cccccc,
+  'flatblack': #333333,
+  'black': #000000,
+  'blue1': #E0F4FF,
+  'blue2': #0CBFEF, 
+  'blue3': #08A5D0,
+  'red1': #EF0C49,
+  'green1': #05F7B5
+ ) !default;
+ 
+$brandColors: (
+  'black': map-get($colors, 'black'),
+  'white': map-get($colors, 'white'),
+  'flatblack': map-get($colors, 'flatblack'),
+  'brightblue': map-get($colors, 'blue2')
+);
+
+$boxShadow: (
+  'one': 1px 1px 1px 1px #000
+);
+
+$stateColors: (
+  'active': map-get($brandColors, 'brightblue' ),
+  'error': map-get($colors, 'red1'),
+  'success': map-get($colors, 'green1'),
+  'info': map-get($colors, 'blue2')
+);
+
+$accentColor: map-get($brandColors, 'brightblue' );
+$baseColor: map-get($colors, 'flatblack' );
+
+$fontFamily: (
+  'base': 'Open Sans',
+  'title': 'Roboto Slab',
+  'accent': 'Roboto',
+) !default;
+
+$size: (
+  'gutter': 8px,
+  'font-base': ('font-size': 16px, 'line-height': 24px),
+  'font-title': ('font-size': 64px, 'line-height': 84px),
+  'font-subtitle': ('font-size': 32px, 'line-height': 48px),
+  'font-body2': ('font-size': 22px, 'line-height': 30px),
+  'font-accent': ('font-size': 32px, 'line-height': 48px),
+  'padding': 16px
+
+) !default;
+
+$breakpoints: (
+  'xs': 320px,
+  'sm': 376px,
+  'md': 776px,
+  'lg': 920px,
+  'xl': 1200px,
+);
+
+$borderRadius: (
+  'one': 5px,
+  'two': 15px,
+  'three': 50%
+);
+
+$font: ( // Font-size, line-height, font-family, color
+  'accent': ( map-get($size, 'font-accent'), map-get($fontFamily, 'accent'), $accentColor ),
+  'base': ( 'font': map-get($size, 'font-base'), 'font-family': map-get($fontFamily, 'base'), 'color': $baseColor ),
+  'title': ( map-get($size, 'font-title'), map-get($fontFamily, 'title'), $baseColor ),
+  'subtitle': ( map-get($size, 'font-subtitle'), map-get($fontFamily, 'title'), $baseColor ),
+);
+
+$body-color: $baseColor;
+$margin: 16px !default;
+$ai-border-default: 1px;
+$ai-border-default-size: 1px;
+$active-color: map-get($stateColors, 'active');
+$error-color: map-get($stateColors, 'error');
+$link-color: map-get($stateColors, 'active');
+$ai-transition: 0.5s ease;

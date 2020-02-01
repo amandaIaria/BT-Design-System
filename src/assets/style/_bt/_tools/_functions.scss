@@ -1,0 +1,46 @@
+
+@mixin settings ($list, $attributes: ()) {
+  $length: length($attributes);
+  $listLength: length($list);
+
+  @debug $list;
+  
+  @for $i from 1 through length($list) {
+
+    @if type-of(nth($list, $i)) == list {
+      
+      // @debug 'after' nth($attributes, $i) nth($list, $i);
+    }
+
+  }
+  
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+      $map: map-get($map, $key);
+  }
+  @return $map;
+}
+
+@mixin create-classes($map, $prefix: '__', $separator: '--') {
+  @each $key, $value in $map {
+    &#{if(type-of($value) == 'map' and 
+      $key != 'hover' and $key != 'focus' and $key != 'disabled' and $key != 'active', 
+      #{$prefix}#{$key}, '')} {
+      @if type-of($value) == 'map' {
+        @if $key == 'hover' or $key == 'focus' or $key == 'disabled' or $key == 'active' {
+          &:#{$key} {
+            @include create-classes($value, $separator);
+          }
+        }
+        @else {
+          @include create-classes($value, $separator);
+        }
+      }
+      @else {
+        #{$key}: $value;
+      }
+    }
+  }
+}

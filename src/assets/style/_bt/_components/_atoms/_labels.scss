@@ -1,0 +1,95 @@
+// 
+// Labels
+// 
+// Various Labels styles.
+// 
+// Styleguide Components - Atoms - Labels
+// 
+
+.aic-a-label {
+  $self: &;
+  
+  &__container {
+    align-items: center;
+    box-sizing: border-box;
+    color: map-get($colors, 'grey1');
+    cursor: text;
+    display: flex;
+    height: 50px;
+    overflow: hidden;
+    padding:  $margin;
+    position: relative;
+    text-align: left;
+    text-overflow: ellipsis;
+    @include transition($ai-transition);
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  &__floating {
+    color: map-get($colors, 'flatblack');
+    cursor: text;
+    font-size: 16px;
+    font-weight: 400;
+    left: 16px;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    @include transform-origin(left top);
+    @include transition(color 150ms ease);
+    @include transition(transform 150ms ease);
+    -webkit-font-smoothing: antialiased;
+    white-space: nowrap;
+    will-change: transform;
+    width: 300px;
+
+    &--float-above {
+      // keeping
+    }
+
+    &--shake {
+      // keeping
+    }
+  }
+
+  &__textarea-container {
+    display: block;
+    min-height: 100px;
+    overflow: inherit;
+    position: relative;
+  }
+
+  &--focus-container {
+    .aic-input-field__label,
+    .aic-select-field__label {
+      font-size: $ai-labels-mixincontainer-fs;
+      line-height: $ai-labels-mixincontainer-lh;
+      @include transform(translateY($ai-labels-container-sfy) translateX($ai-labels-container-sfx));
+    }
+  }
+
+  &--bordered {
+    @include label-container-bordered(map-get($colors, 'flatblack'), 'regular');
+
+    &:focus-within {
+      @include label-container-bordered(map-get($colors, 'flatblack'), 'focus');
+    }
+
+    &:hover {
+      @include label-container-bordered(map-get($colors, 'flatblack'), 'hover');
+    }
+  }
+}
+
+.aiu-states-error .aic-a-label--bordered {
+  border-color: $error-color;
+
+  &:focus,
+  &:focus-within,
+  &:hover {
+    @include label-container-bordered($error-color, 'hover');
+  }
+}

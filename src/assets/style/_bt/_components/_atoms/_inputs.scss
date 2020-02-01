@@ -1,0 +1,46 @@
+// 
+// Checkbox
+// 
+// Various Checkbox styles.
+// 
+// Styleguide Components - Atoms - Checkbox
+// 
+
+.aic-a-input {
+  &__input { 
+    @include input;
+    outline: none;
+  }
+  
+  &__textarea {
+    @include input;
+    padding: $margin;
+  }
+
+  &__number {
+    -moz-appearance: textfield;
+    -ms-appearance: textfield;
+    appearance: textfield;
+
+    &:hover,
+    &:focus {
+      -moz-appearance: textfield;
+      -ms-appearance: textfield;
+      appearance: textfield; // number-input;
+    }
+  }
+  
+  &__checkbox,
+  &__radio {
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+  }
+
+  &__textarea,
+  &__input {
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,5 +1,31 @@
+/* 
+* 
+* Settings: global variables, such as brand colours, configs etc
+*
+* Tools: mixins and helper functions
+*
+* Generic: ground zero styles, reset styles such as normalize.css
+*
+* Elements: a.k.a. Base, unclassed html elements, e.g. headings, lists, tables, this is the last layer that styles tag selectors
+*
+* Objects:  no cosmetic design patterns. Class only styles from here onwards. Classes here are loosely named and I start doing BEM here 
+*
+* Components: rich design UI styling. Class names here are more specific. This layer usually has the biggest volume
+*
+* Themes: if applicable, thematic styles are placed here (e.g. seasonal Christmas theme)
+*
+* Utilities: utilities, helpers and overrides. !important is often used.
+* https://www.silverstripe.org/blog/better-css-putting-it-together-with-atomic-itcss-and-bem/
+* https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+*
+*/
+
+
 @import
-  '_mixins/mixins',
+  '_settings/settings',
+  '_tools/tools',
+  '_generic/generic',
+  '_elements/elements',
+  '_objects/objects',
   '_components/components',
-  '_layout/layout',
   '_utility/utility';

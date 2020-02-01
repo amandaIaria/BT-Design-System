@@ -1,0 +1,15 @@
+html,
+body {
+  font-size: map-deep-get($size, 'font-base', 'font-size');
+  line-height: map-deep-get($size, 'font-base', 'line-height');
+  font-family: map-get($fontFamily, 'base');
+  color: $body-color;
+}
+
+a {
+  color: $link-color;
+}
+
+input:invalid {
+  box-shadow: 0 0 0 1px transparent;
+}
