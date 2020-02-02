@@ -14,11 +14,10 @@
 // Styleguide Components - Molecule - Textbox
 // 
 
-.aic-a-m-input-field {
+.aic-m-input-field {
   $self: &;
   box-sizing: border-box;
   overflow: visible;
-  border-radius: 5px;
   display: block;
   position: relative;
   -webkit-box-sizing: border-box;
@@ -29,7 +28,8 @@
     @extend .aic-a-label__container;
   }
 
-  &__input { 
+  &__input {
+    opacity: 0;
     @extend .aic-a-input__input;
   }
 
@@ -50,6 +50,10 @@
   }
 
   &--bordered {
+    &#{$self}--focused {
+      border-color: $active-color;
+    }
+    
     @extend .aic-a-label--bordered;
   }
 
@@ -123,8 +127,8 @@
   &--focused {
     @extend .aic-a-label--focus-container;
 
-    .aic-a-button__password {
-      opacity: $ai-inputfield-password-opacity;
+    #{$self}__input {
+      opacity: 1;
     }
   }
 }

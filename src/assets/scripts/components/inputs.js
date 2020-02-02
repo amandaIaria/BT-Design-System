@@ -10,15 +10,15 @@ import { Selects } from './inputs/selects';
 
 const
   $options = document.getElementById('example-option2'),
-  $buttons = document.querySelectorAll('.dlc-button'),
-  $dateContainers = document.querySelectorAll('.dljs-input-field--custom-date-picker'),
-  $filUploadContainers = document.querySelectorAll('.dlc-file-upload'),
-  $fileUploadButtons = document.querySelectorAll('label.dlc-file-upload__upload-button'),
-  $inputContainers = document.querySelectorAll('.dlc-input-field__input-container'),
-  $txtContainers = document.querySelectorAll('.dlc-input-field__textarea-container'),
-  $selectContainers = document.querySelectorAll('.dlc-select-field__input-container'),
-  $customSelectContainers = document.querySelectorAll('.dlc-select-field--menu'),
-  $buttonGroups = document.querySelectorAll('.dlc-button-group'),
+  $buttons = document.querySelectorAll('.aic-m-button'),
+  $dateContainers = document.querySelectorAll('.aijs-m-input-field--custom-date-picker'),
+  $filUploadContainers = document.querySelectorAll('.aic-m-file-upload'),
+  $fileUploadButtons = document.querySelectorAll('label.aic-m-file-upload__upload-button'),
+  $inputContainers = document.querySelectorAll('.aic-m-input-field__input-container'),
+  $txtContainers = document.querySelectorAll('.aic-m-input-field__textarea-container'),
+  $selectContainers = document.querySelectorAll('.aic-m-select-field__input-container'),
+  $customSelectContainers = document.querySelectorAll('.aic-m-select-field--menu'),
+  $buttonGroups = document.querySelectorAll('.aic-m-button-group'),
   buttonClass = new Buttons(),
   dateClass = new DateInput(),
   generalInput = new Inputs(),
@@ -38,21 +38,21 @@ $buttons.forEach(($button) => {
 });
 
 $buttonGroups.forEach(($buttonGroup) => {
-  const $radioButtons = $buttonGroup.querySelectorAll('.dlc-button-group__button');
+  const $radioButtons = $buttonGroup.querySelectorAll('.aic-m-button-group__button');
 
   $radioButtons.forEach(($radioButton) => {
     // On Load
-    if ($radioButton.querySelector('.dlc-button-group__native').checked) {
-      $radioButton.classList.add('dlc-button-group--checked');
+    if ($radioButton.querySelector('.aic-m-button-group__native').checked) {
+      $radioButton.classList.add('aic-m-button-group--checked');
     }
     else {
-      $radioButton.classList.remove('dlc-button-group--checked');
+      $radioButton.classList.remove('aic-m-button-group--checked');
     }
     $radioButton.addEventListener('click', (e) => {
       $radioButtons.forEach(($rb) => {
-        $rb.classList.remove('dlc-button-group--checked');
+        $rb.classList.remove('aic-m-button-group--checked');
       });
-      e.currentTarget.classList.add('dlc-button-group--checked');
+      e.currentTarget.classList.add('aic-m-button-group--checked');
     });
   });
 });
@@ -64,7 +64,7 @@ $dateContainers.forEach(($dateContainer) => {
 $fileUploadButtons.forEach(($fileUploadButton) => {
   $fileUploadButton.addEventListener('keydown', (e) => {
     if (e.keyCode === 13) {
-      $fileUploadButton.querySelector('.dlc-button__file.dlc-button__input').click();
+      $fileUploadButton.querySelector('.aic-m-button__file.aic-m-button__input').click();
     }
   });
 });
@@ -112,30 +112,30 @@ document.querySelector('body').addEventListener('click', (e) => {
   }
 
   // Calendar
-  if (e.target && e.target.nodeName === 'BUTTON' && e.target.classList.contains('dlc-input-field__calendar-day')) {
+  if (e.target && e.target.nodeName === 'BUTTON' && e.target.classList.contains('aic-m-input-field__calendar-day')) {
     $thisContainer = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
 
-    $thisContainer.querySelectorAll('.dlc-input-field__calendar-day').forEach(($button) => {
-      $button.classList.remove('dlc-input-field__calendar-day--selected');
+    $thisContainer.querySelectorAll('.aic-m-input-field__calendar-day').forEach(($button) => {
+      $button.classList.remove('aic-m-input-field__calendar-day--selected');
     });
     dateClass.GetValue(e);
   }
 
-  if (e.target && e.target.nodeName === 'BUTTON' && e.target.classList.contains('dlc-input-field__calendar-week')) {
+  if (e.target && e.target.nodeName === 'BUTTON' && e.target.classList.contains('aic-m-input-field__calendar-week')) {
     $thisContainer = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
 
-    $thisContainer.querySelectorAll('.dlc-input-field__calendar-row').forEach(($row) => {
-      $row.classList.remove('dlc-input-field__calendar-row--selected');
+    $thisContainer.querySelectorAll('.aic-m-input-field__calendar-row').forEach(($row) => {
+      $row.classList.remove('aic-m-input-field__calendar-row--selected');
     });
     dateClass.GetValue(e);
   }
 
-  if (e.target && e.target.classList.contains('dlc-input-field__calendar-bg')) {
+  if (e.target && e.target.classList.contains('aic-m-input-field__calendar-bg')) {
     dateClass.Close();
   }
 
   // File Upload
-  if (e.target && e.target.parentNode.classList.contains('dlc-file-upload__remove')) {
+  if (e.target && e.target.parentNode.classList.contains('aic-m-file-upload__remove')) {
     $thisContainer = e.target.parentNode.parentNode.parentNode;
     id = $thisContainer.id;
 

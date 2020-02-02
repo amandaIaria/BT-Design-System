@@ -9,12 +9,34 @@
 .aic-a-input {
   &__input { 
     @include input;
-    outline: none;
   }
   
   &__textarea {
-    @include input;
-    padding: $margin;
+    align-self: flex-end;
+    background: #E0F4FF;
+    border: none;
+    color: #333333;
+    font-size: 14px;
+    font-weight: 600;
+    left: 4px;
+    line-height: 24px;
+    -ms-flex-item-align: end;
+    /* margin-bottom: 8px; */
+    text-decoration: none;
+    bottom: 7px;
+    position: absolute;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-transition: opacity 150ms ease;
+    -os-transition: opacity 150ms ease;
+    transition: opacity 150ms ease;
+    -webkit-transition: 0.5s ease;
+    -os-transition: 0.5s ease;
+    transition: 0.5s ease;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    
   }
 
   &__number {

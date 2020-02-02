@@ -16,39 +16,33 @@ export function Inputs() {
 
     _eventMethod = (e, type) => {
       const
-        $input = e.srcElement.parentNode.querySelector('input') || e.srcElement.parentNode.querySelector('textarea'),
-        $thisLabel = e.srcElement.parentNode.classList;
-        // keeping this for future endeavors
-        // focusMaskCheck = (input) => {
-        //   if (input.value === input.dataset.mask) {
-        //     return true;
-        //   }
-        //   return false;
-        // };
+        $input = e.currentTarget.querySelector('input') || e.currentTarget.querySelector('textarea'),
+        $thisLabel = e.currentTarget.classList;
 
       switch (e.type) {
         case 'click':
-          $thisLabel.add('dlc-input-field--focused');
+          $thisLabel.add('aic-m-input-field--focused');
+          console.log($thisLabel);
           break;
         case 'focusin':
-          $thisLabel.add('dlc-input-field--focused');
+          $thisLabel.add('aic-m-input-field--focused');
           break;
         case 'focusout':
-          if ($input.value === '' && $thisLabel.contains('dlc-input-field--focused') && type !== 'date') {
-            $thisLabel.remove('dlc-input-field--focused');
+          if ($input.value === '' && $thisLabel.contains('aic-m-input-field--focused') && type !== 'date') {
+            $thisLabel.remove('aic-m-input-field--focused');
           }
           else {
             if (e.target.type === 'tel') {
-              if (e.target.classList.contains('dlc-input-field__routing')) {
+              if (e.target.classList.contains('aic-m-input-field__routing')) {
                 regex.Reg(e, 'routing');
               }
-              if (e.target.classList.contains('dlc-input-field__cc')) {
+              if (e.target.classList.contains('aic-m-input-field__cc')) {
                 regex.Reg(e, 'cc');
               }
-              if (e.target.classList.contains('dlc-input-field__bank')) {
+              if (e.target.classList.contains('aic-m-input-field__bank')) {
                 regex.Reg(e, 'bank');
               }
-              if (e.target.classList.contains('dlc-input-field__phone')) {
+              if (e.target.classList.contains('aic-m-input-field__phone')) {
                 regex.Reg(e, e.target.type);
               }
             }
@@ -80,7 +74,7 @@ export function Inputs() {
 
         inputMaskCreate = () => {
           const $nativeInput = document.createElement('input');
-          $nativeInput.classList.add('dlc-input-field__native');
+          $nativeInput.classList.add('aic-m-input-field__native');
           $nativeInput.setAttribute('type', 'phone');
           $nativeInput.setAttribute('tabindex', '-1');
           $container.appendChild($nativeInput);
@@ -95,8 +89,8 @@ export function Inputs() {
             inputType = input.dataset.input === '' ? input.dataset.input : input.type,
             usedMask = maskType !== '' ? customMask(maskType, maskArray) : masks[inputType];
 
-          if (e.target.parentNode.classList.contains('dljs-input-field--mask')) {
-            const $hiddenValueInput = e.target.parentNode.querySelector('.dlc-input-field__native');
+          if (e.target.parentNode.classList.contains('aijs-input-field--mask')) {
+            const $hiddenValueInput = e.target.parentNode.querySelector('.aic-m-input-field__native');
             $hiddenValueInput.value = inputMaskDestroy(e.target.value, usedMask[3], usedMask[0]);
             e.target.value = inputMasking($hiddenValueInput.value, usedMask[1], usedMask[2]);
           }
@@ -118,14 +112,14 @@ export function Inputs() {
         $textboxContainer = $button.parentNode,
         $textbox = $textboxContainer.querySelector('input');
 
-      if ($textboxContainer.classList.contains('dljs-input-field--convert')) {
+      if ($textboxContainer.classList.contains('aijs-input-field--convert')) {
         $buttonIcon.textContent = 'visibility';
-        $textboxContainer.classList.remove('dljs-input-field--convert');
+        $textboxContainer.classList.remove('aijs-input-field--convert');
         $textbox.setAttribute('type', 'password');
       }
       else {
         $buttonIcon.textContent = 'visibility_off';
-        $textboxContainer.classList.add('dljs-input-field--convert');
+        $textboxContainer.classList.add('aijs-input-field--convert');
         $textbox.setAttribute('type', 'text');
       }
     },
@@ -135,7 +129,7 @@ export function Inputs() {
         regex.Error(e, e.target.type, 'This is a required field');
       }
       if (e.target.value !== '' && e.target.hasAttribute('required')
-        && e.target.parentNode.parentNode.classList.contains('dlc-input-helper--error')) {
+        && e.target.parentNode.parentNode.classList.contains('aic-m-input-helper--error')) {
         regex.RemoveError(e);
       }
     },
@@ -149,7 +143,7 @@ export function Inputs() {
 
   this.SetUp = ($container, type) => {
     const
-      $input = $container.querySelector('.dlc-input-field__input'),
+      $input = $container.querySelector('.aic-m-input-field__input'),
       bankMask = new Inputmask({
         mask: '9999 9999 9999 9999',
         // regex: reg.Formats('bank'),
@@ -192,58 +186,58 @@ export function Inputs() {
       });
     }
 
-    if ($container.querySelector('.dlc-input-field__textarea') !== null) {
-      $container.querySelector('.dlc-input-field__textarea').addEventListener('keyup', (e) => {
+    if ($container.querySelector('.aic-m-input-field__textarea') !== null) {
+      $container.querySelector('.aic-m-input-field__textarea').addEventListener('keyup', (e) => {
         _textareaAutoGrow(e.currentTarget);
       });
     }
 
-    if ($input !== null && $input.classList.contains('dlc-input-field__money')) {
-      $container.classList.add('dlc-input-field--focused');
+    if ($input !== null && $input.classList.contains('aic-m-input-field__money')) {
+      $container.classList.add('aic-m-input-field--focused');
     }
 
-    if ($container.classList.contains('dljs-input-field--mask') && $input !== null) {
-      if ($input.classList.contains('dlc-input-field__email')) {
-        emailMask.mask($container.querySelector('.dlc-input-field__email'));
+    if ($container.classList.contains('aijs-input-field--mask') && $input !== null) {
+      if ($input.classList.contains('aic-m-input-field__email')) {
+        emailMask.mask($container.querySelector('.aic-m-input-field__email'));
       }
 
-      if ($input.classList.contains('dlc-input-field__phone')) {
-        phoneMask.mask($container.querySelector('.dlc-input-field__phone'));
+      if ($input.classList.contains('aic-m-input-field__phone')) {
+        phoneMask.mask($container.querySelector('.aic-m-input-field__phone'));
       }
 
-      if ($input.classList.contains('dlc-input-field__cc')) {
-        ccMask.mask($container.querySelector('.dlc-input-field__cc'));
+      if ($input.classList.contains('aic-m-input-field__cc')) {
+        ccMask.mask($container.querySelector('.aic-m-input-field__cc'));
       }
 
-      if ($input.classList.contains('dlc-input-field__routing')) {
-        bankRoutingMask.mask($container.querySelector('.dlc-input-field__routing'));
+      if ($input.classList.contains('aic-m-input-field__routing')) {
+        bankRoutingMask.mask($container.querySelector('.aic-m-input-field__routing'));
       }
 
-      if ($input.classList.contains('dlc-input-field__bank')) {
-        bankMask.mask($container.querySelector('.dlc-input-field__bank'));
+      if ($input.classList.contains('aic-m-input-field__bank')) {
+        bankMask.mask($container.querySelector('.aic-m-input-field__bank'));
       }
 
-      if ($input.classList.contains('dlc-input-field__money')) {
-        moneyMask.mask($container.querySelector('.dlc-input-field__money'));
+      if ($input.classList.contains('aic-m-input-field__money')) {
+        moneyMask.mask($container.querySelector('.aic-m-input-field__money'));
       }
     }
 
-    if ($container.querySelector('input') !== null && $container.querySelector('input').value !== '' && !$container.classList.contains('dlc-input-field__date-container')) {
-      $container.classList.add('dlc-input-field--focused');
+    if ($container.querySelector('input') !== null && $container.querySelector('input').value !== '' && !$container.classList.contains('aic-m-input-field__date-container')) {
+      $container.classList.add('aic-m-input-field--focused');
     }
 
-    if ($container.querySelector('textarea') !== null && $container.querySelector('textarea').value !== '' && !$container.classList.contains('dlc-input-field__date-container')) {
-      $container.classList.add('dlc-input-field--focused');
+    if ($container.querySelector('textarea') !== null && $container.querySelector('textarea').value !== '' && !$container.classList.contains('aic-m-input-field__date-container')) {
+      $container.classList.add('aic-m-input-field--focused');
       _textareaAutoGrow($container.querySelector('textarea'));
     }
 
-    if ($container.querySelector('input') !== null && $container.querySelector('input').value !== '' && $container.classList.contains('dlc-input-field__date-container')) {
-      $container.classList.add('dlc-input-field--focused');
-      $container.querySelector('.dlc-input-field__input').innerHTML = _changeDateFormat($container.querySelector('.dlc-input-field__native').value);
+    if ($container.querySelector('input') !== null && $container.querySelector('input').value !== '' && $container.classList.contains('aic-m-input-field__date-container')) {
+      $container.classList.add('aic-m-input-field--focused');
+      $container.querySelector('.aic-m-input-field__input').innerHTML = _changeDateFormat($container.querySelector('.aic-m-input-field__native').value);
     }
 
     if (type === 'password') {
-      $container.querySelector('.dlc-button__password').addEventListener('click', (e) => {
+      $container.querySelector('.aic-m-button__password').addEventListener('click', (e) => {
         _password(e);
       });
     }

@@ -16,33 +16,52 @@
 
 .aic-a-button {
   $self: &;
+  border: thin solid;
+  border-radius: 2px;
   text-decoration: none;
   cursor: pointer;
   position: relative;
   display: inline-block;
   text-align: center;
-  @include transition($ai-transition);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  @include transition(background-color $ai-transition);
+  @include transition(color $ai-transition);
+
+  &:active {
+    top: 2px;
+  }
+   
+  &:focus {
+    outline: thin solid $active-color;
+    outline-offset: 8px;
+  }
 
   // if we don't need to extend it then use this method and map
   // @include create-classes($buttons, '--', '-');
   // @include create-classes($buttons-sizes, '--', '-');
-
-  &__label {
-    vertical-align: middle;
-  }
-
   &__input {
     display: none;
   }
 
+  &__label {
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__navigaiton {
+    //
+  }
+  
   &--close {
     font-size: $ai-button-password-icon-font-size;
   }
 
   &--default {
-    padding-bottom: $ai-button-size-pdefault;
-    padding-top: $ai-button-size-pdefault;
-    width: $ai-button-size-default;
+    padding: 6px 24px;
+    width: auto;
   }
   
   &--remove {
@@ -63,12 +82,43 @@
     }
   }
 
+  &--block {
+    background: map-get($map: $colors, $key: 'blue1');
+    color: map-get($map: $colors, $key: 'flatblack');
+    padding: 24px;
+  }
+
   &--primary {
-    //
+    background: map-get($map: $colors, $key: 'blue2');
+    border-color: map-get($map: $colors, $key: 'blue2');
+    color: map-get($map: $colors, $key: 'white');
+    @include box-shadow(0px 4px 0px 0px map-get($map: $colors, $key: 'blue3'));
+
+    &:hover {
+      border-color: map-get($map: $colors, $key: 'blue3');
+      background: map-get($map: $colors, $key: 'blue3');
+      @include box-shadow(0px 4px 0px 0px map-get($map: $colors, $key: 'blue2'));
+    }
+
+    &:active {
+      @include box-shadow(0px 2px 0px 0px map-get($map: $colors, $key: 'blue2'));
+    }
   }
 
   &--secondary {
-    //
+    background: map-get($map: $colors, $key: 'white');
+    border: thin solid map-get($map: $colors, $key: 'flatblack');
+    color: map-get($map: $colors, $key: 'flatblack');
+    @include box-shadow(0px 4px 0px 0px map-get($map: $colors, $key: 'flatblack'));
+
+    &:hover {
+      background: map-get($map: $colors, $key: 'flatblack');
+      color: map-get($map: $colors, $key: 'white');
+    }
+
+    &:active {
+      @include box-shadow( 0px 2px 0px 0px map-get($map: $colors, $key: 'flatblack'));
+    }
   }
 
   &--tertiary {

@@ -15,15 +15,15 @@
     color: map-get($colors, 'grey1');
     cursor: text;
     display: flex;
-    height: 50px;
+    height: 54px;
     overflow: hidden;
     padding:  $margin;
     position: relative;
     text-align: left;
     text-overflow: ellipsis;
-    @include transition($ai-transition);
     white-space: nowrap;
     will-change: transform;
+    @include transition($ai-transition);
   }
 
   &__floating {
@@ -35,16 +35,16 @@
     overflow: hidden;
     pointer-events: none;
     position: absolute;
-    top: 0;
+    // top: 16px;
     text-align: left;
     text-overflow: ellipsis;
-    @include transform-origin(left top);
-    @include transition(color 150ms ease);
-    @include transition(transform 150ms ease);
     -webkit-font-smoothing: antialiased;
     white-space: nowrap;
     will-change: transform;
-    width: 300px;
+    width: 100%;
+    @include transform-origin(left top);
+    @include transition(color 150ms ease);
+    @include transition(transform 150ms ease);
 
     &--float-above {
       // keeping
@@ -63,23 +63,31 @@
   }
 
   &--focus-container {
-    .aic-input-field__label,
-    .aic-select-field__label {
-      font-size: $ai-labels-mixincontainer-fs;
+    .aic-m-input-field__label,
+    .aic-m-select-field__label {
+      font-size: 10px;
       line-height: $ai-labels-mixincontainer-lh;
-      @include transform(translateY($ai-labels-container-sfy) translateX($ai-labels-container-sfx));
+      @include transform(translateY(-13px) translateX(0));
     }
   }
 
   &--bordered {
-    @include label-container-bordered(map-get($colors, 'flatblack'), 'regular');
+    border: 1px solid map-get($colors, 'flatblack');
+    border-radius: 0;
+    @include box-shadow(inset 0px 0px 0px 4px transparent);
+
+    &#{$self}--focused {
+      border-color: $active-color;
+    }
 
     &:focus-within {
-      @include label-container-bordered(map-get($colors, 'flatblack'), 'focus');
+      border-color: $active-color;
+      @include box-shadow(inset 0px 0px 0px 4px $active-color);
     }
 
     &:hover {
-      @include label-container-bordered(map-get($colors, 'flatblack'), 'hover');
+      border-color: $active-color;
+      @include box-shadow(inset 0px 0px 0px 4px $active-color);
     }
   }
 }
@@ -90,6 +98,7 @@
   &:focus,
   &:focus-within,
   &:hover {
-    @include label-container-bordered($error-color, 'hover');
+    border-color: $error-color;;
+    @include box-shadow(inset 0px 0px 0px 4px $error-color);
   }
 }

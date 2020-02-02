@@ -1,31 +1,24 @@
 @mixin input {
   align-self: $ai-inpitmixin-as;
-  background: $ai-inpitmixin-background;
-  border: $ai-inpitmixin-border;
-  color:  $ai-inpitmixin-color;
-  font-size:  16px;
-  font-weight: $ai-inpitmixin-fw;
+  background: map-get($map: $colors, $key: 'blue1');
+  border: none;
+  color:  $body-color;
+  font-size:  14px;
+  font-weight: 600;
+  height: 22px;
   line-height:  24px;
   -ms-flex-item-align: $ai-inpitmixin-mfia;
-  margin-bottom: $ai-inpitmixin-mb;
-  text-decoration: $ai-inpitmixin-td;
-  text-transform: $ai-inpitmixin-tt;
-  width: 320px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-left: -12px;
+  margin-right: -12px;
+  width: calc(100% - 8px);
+  bottom: 0;
+  position: absolute;
   @include appearance($ai-inpitmixin-appearance);
-  @include border-radius($ai-inpitmixin-br);
   @include transition($ai-inpitmixin-transition);
   @include transition($ai-inpitmixin-transition1);
   @include transform($ai-inpitmixin-transform);
-}
-
-@mixin label-container-bordered($color, $type) {
-  @if $type == 'hover' or $type == 'focus' {
-    border-color: $color;
-    @include box-shadow(inset 1px 1px 1px 1px $color);
-  }
-  @else {
-    border: 1px solid $color;
-    border-radius: map-get($map: $borderRadius, $key: 'one' );
-    @include box-shadow(inset 1px 1px 1px 1px transparent);
-  }
 }
