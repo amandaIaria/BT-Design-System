@@ -1,0 +1,19 @@
+// 
+// Border
+// 
+// Utility of the ITCSS
+// 
+// Styleguide Utility - Border
+//
+
+.aiu-border {
+  border-style: solid;
+
+  &-size {
+    @for $i from 0 to 34 {
+      &--#{$i} {
+        border-size: #{$i}px;
+      }
+    }
+  }
+}

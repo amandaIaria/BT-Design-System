@@ -10,7 +10,7 @@ import { Selects } from './inputs/selects';
 
 const
   $options = document.getElementById('example-option2'),
-  $buttons = document.querySelectorAll('.aic-m-button'),
+  $buttons = document.querySelectorAll('.aic-a-button'),
   $dateContainers = document.querySelectorAll('.aijs-m-input-field--custom-date-picker'),
   $filUploadContainers = document.querySelectorAll('.aic-m-file-upload'),
   $fileUploadButtons = document.querySelectorAll('label.aic-m-file-upload__upload-button'),
@@ -29,12 +29,7 @@ let
   fileUploadV2;
 
 $buttons.forEach(($button) => {
-  $button.addEventListener('click', () => {
-    buttonClass.Loader($button, 'add');
-    setTimeout(() => {
-      buttonClass.Loader($button, 'remove');
-    }, 2000);
-  });
+  buttonClass.Init($button);
 });
 
 $buttonGroups.forEach(($buttonGroup) => {

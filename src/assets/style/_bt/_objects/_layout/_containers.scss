@@ -1,0 +1,28 @@
+// 
+// Basics 
+// 
+// Various Basics styles.
+// 
+// Styleguide Objects - Layout - Containers
+// 
+
+.ail-containers {
+  &__full-page {
+    // Any thing that uses the full page/window layout should use this.
+
+    &-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    // This 
+  }
+
+  &__content {
+    // Normal content should use this one
+    margin: auto;
+    max-width: 1200px;
+
+    // Media Queries Here
+  }
+}

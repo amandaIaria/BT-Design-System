@@ -12,29 +12,29 @@ export default function HideAndShow() {
     },
 
     _close = ($container, $content, $button) => {
-      $button.classList.remove('dlc-accordion--active');
-      $content.classList.remove('dlc-accordion--show');
+      $button.classList.remove('aic-o-accordion--active');
+      $content.classList.remove('aic-o-accordion--show');
       _changeIcons($button, 'arrow_drop_up', 'arrow_drop_down');
     },
 
     _closeAll = ($container) => {
       const
         $allButtons = $container.querySelectorAll('button'),
-        $allContent = $container.querySelectorAll('.dlc-accordion__content');
+        $allContent = $container.querySelectorAll('.aic-o-accordion__content');
 
       $allButtons.forEach(($button) => {
-        $button.classList.remove('dlc-accordion--active');
+        $button.classList.remove('aic-o-accordion--active');
         _changeIcons($button, 'arrow_drop_up', 'arrow_drop_down');
       });
 
       $allContent.forEach(($content) => {
-        $content.classList.remove('dlc-accordion--show');
+        $content.classList.remove('aic-o-accordion--show');
       });
     },
 
     _open = ($content, $button) => {
-      $button.classList.add('dlc-accordion--active');
-      $content.classList.add('dlc-accordion--show');
+      $button.classList.add('aic-o-accordion--active');
+      $content.classList.add('aic-o-accordion--show');
       _changeIcons($button, 'arrow_drop_down', 'arrow_drop_up');
     };
 
@@ -43,7 +43,7 @@ export default function HideAndShow() {
       $container = $button.parentElement.parentElement,
       $content = $button.nextElementSibling;
 
-    if (!$content.classList.contains('dlc-accordion--show')) {
+    if (!$content.classList.contains('aic-o-accordion--show')) {
       _closeAll($container);
       _open($content, $button);
     }
@@ -57,7 +57,7 @@ export default function HideAndShow() {
       $container = $button.parentElement.parentElement,
       $content = $button.nextElementSibling;
 
-    if (!$content.classList.contains('dlc-accordion--show')) {
+    if (!$content.classList.contains('aic-o-accordion--show')) {
       _open($content, $button);
     }
     else {
@@ -74,17 +74,17 @@ export default function HideAndShow() {
         placement: direction,
         trigger: 'click hover focus',
         html: true,
-        innerSelector: '.dlc-tooltip__inner',
-        arrowSelector: '.dlc-tooltip__carrot',
-        template: `<div class="dlc-tooltip__tooltip" role="tooltip" area-label="${copy}"><div class="dlc-tooltip__carrot"></div><div class="dlc-tooltip__inner"></div></div>`,
+        innerSelector: '.aic-m-tooltip__inner',
+        arrowSelector: '.aic-m-tooltip__carrot',
+        template: `<div class="aic-m-tooltip__tooltip" role="tooltip" area-label="${copy}"><div class="aic-m-tooltip__carrot"></div><div class="aic-m-tooltip__inner"></div></div>`,
       });
   };
 }
 
 const
-  $accordions = document.querySelectorAll('.dlc-accordion--accordion button'),
-  $collapses = document.querySelectorAll('.dlc-accordion--collapse button'),
-  $tooltips = document.querySelectorAll('.dlc-tooltip'),
+  $accordions = document.querySelectorAll('.aic-o-accordion--accordion button'),
+  $collapses = document.querySelectorAll('.aic-o-accordion--collapse button'),
+  $tooltips = document.querySelectorAll('.aic-m-tooltip'),
   hideShow = new HideAndShow();
 
 $accordions.forEach(($accordion) => {

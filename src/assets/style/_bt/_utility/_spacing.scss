@@ -1,0 +1,44 @@
+// 
+// Spacing
+// 
+// Utility of the ITCSS
+// 
+// Styleguide Utility - Spacing
+//
+
+.aiu-spacing {
+
+  @for $i from 0 to 60 {
+    &--m#{$i} {margin: #{$i}px !important}
+    &--m-top#{$i} {margin-top: #{$i}px !important}
+    &--m-bottom#{$i} {margin-bottom: #{$i}px !important}
+    &--m-left#{$i} {margin-left: #{$i}px !important}
+    &--m-right#{$i} {margin-right: #{$i}px !important}
+    &--m-h#{$i} {margin: 0 #{$i}px !important}
+    &--m-v#{$i} {margin: #{$i +2 }px 0 !important}
+    &--p#{$i} {padding: #{$i}px !important}
+    &--p-top#{$i} {padding-top: #{$i}px !important}
+    &--p-bottom#{$i} {padding-bottom: #{$i}px !important}
+    &--p-left#{$i} {padding-left: #{$i}px !important}
+    &--p-right#{$i} {padding-right: #{$i}px !important}
+    &--p-h#{$i} {padding: 0 #{$i}px !important}
+    &--p-v#{$i} {padding: #{$i}px 0 !important}
+  }
+
+  @for $i from 0 to -58 {
+    &--m-#{$i} {margin: #{$i  - 2}px !important}
+    &--m--top#{$i} {margin-top: #{$i - 2}px !important}
+    &--m--bottom#{$i} {margin-bottom: #{$i - 2}px !important}
+    &--m--left#{$i} {margin-left: #{$i - 2}px !important}
+    &--m--right#{$i} {margin-right: #{$i - 2}px !important}
+    &--m--h#{$i} {margin: 0 #{$i - 2}px !important}
+    &--m--v#{$i} {margin: #{$i - 2}px 0 !important}
+    &--p-#{$i} {padding: #{$i - 2}px !important}
+    &--p--top#{$i} {padding-top: #{$i - 2}px !important}
+    &--p--bottom#{$i} {padding-bottom: #{$i - 2}px !important}
+    &--p--left#{$i} {padding-left: #{$i - 2}px !important}
+    &--p--right#{$i} {padding-right: #{$i - 2}px !important}
+    &--p--h#{$i} {padding: 0 #{$i - 2}px !important}
+    &--p--v#{$i} {padding: #{$i - 2}px 0 !important}
+  }
+}

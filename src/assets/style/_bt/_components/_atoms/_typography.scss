@@ -7,5 +7,32 @@
 // 
 
 .aic-a-typography {
-  //
+  &--title {
+    @extend h1;
+  }
+
+  &--subtitle {
+    @extend h5;
+  }
+
+  &--body1 {
+    @extend p;
+  }
+
+  &--body2 {
+    font-family: map-get($map: $fontFamily, $key: 'base'), Arial, Helvetica, sans-serif;
+    font-size: map-deep-get($size, 'font-body2', 'font-size');
+    line-height: map-deep-get($size, 'font-body2', 'line-height');
+    padding: 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  &--accent {
+    font-family: map-get($map: $fontFamily, $key: 'accent'), Arial, Helvetica, sans-serif;
+    font-size: map-deep-get($size, 'font-accent', 'font-size');
+    line-height: map-deep-get($size, 'font-accent', 'line-height');
+    font-weight: 100;
+    color: $accentColor;
+  }
 }

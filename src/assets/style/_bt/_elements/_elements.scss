@@ -1,3 +1,11 @@
+// 
+// Basics
+// 
+// Element of the ITCSS
+// 
+// Styleguide Elements
+//
+
 html,
 body {
   font-size: map-deep-get($size, 'font-base', 'font-size');
@@ -8,8 +16,45 @@ body {
 
 a {
   color: $link-color;
+  text-decoration: none;
+  font-family: map-get($fontFamily, 'accent');
+  font-weight: 100;
+  border-bottom: map-get($map: $colors, $key: 'flatblack') thin solid;
+  @include transition($ai-transition);
+
+  &:hover,
+  &:focus {
+    border-color: $link-color;
+    box-shadow: inset 0 -1px 0 0 $link-color;
+  }
+}
+
+hr {
+  border: none;
+  border-bottom: 4px solid map-get($colors, 'flatblack');
+  margin: 16px 0;
 }
 
 input:invalid {
   box-shadow: 0 0 0 1px transparent;
+}
+
+@for $i from 0 to 7 {
+  h#{$i + 1} {
+    font-family: map-get($map: $fontFamily, $key: 'title' );
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    font-size: #{64 - (8 * $i)}px;
+    line-height: #{84 - (8 * $i)}px;
+  }
+}
+
+p {
+  font-family: map-get($map: $fontFamily, $key: 'base'), Arial, Helvetica, sans-serif;
+  font-size: map-deep-get($size, 'font-base', 'font-size');
+  line-height: map-deep-get($size, 'font-base', 'line-height');
+  padding: 16px;
+  margin-left: -16px;
+  margin-right: -16px;
 }

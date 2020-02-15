@@ -4,11 +4,11 @@
 
 
 const
-  $switchInputs = document.querySelectorAll('.dlc-switch__native-control');
+  $switchInputs = document.querySelectorAll('.aic-m-switch__native-control');
   // $radioInputs = document.querySelectorAll('.dlc-radio-field__native-control');
 
 $switchInputs.forEach(($switchInput) => {
   $switchInput.addEventListener('click', (e) => {
-    e.target.parentElement.parentElement.parentElement.classList.toggle('dlc-switch--checked');
+    e.target.parentElement.parentElement.parentElement.classList.toggle('aic-m-switch--checked');
   });
 });

@@ -30,6 +30,7 @@
 
   &__input {
     opacity: 0;
+    @extend .aic-a-input;
     @extend .aic-a-input__input;
   }
 
@@ -46,6 +47,8 @@
   }
 
   &__textarea {
+    opacity: 0;
+    @extend .aic-a-input;
     @extend .aic-a-input__textarea;
   }
 
@@ -127,7 +130,8 @@
   &--focused {
     @extend .aic-a-label--focus-container;
 
-    #{$self}__input {
+    #{$self}__input,
+    #{$self}__textarea {
       opacity: 1;
     }
   }

@@ -2,19 +2,19 @@
 export default function Modals() {
   this.open = (dataId) => {
     const modalId = dataId.srcElement.dataset.modal;
-    document.getElementById(modalId).classList.remove('dlu-display--none');
+    document.getElementById(modalId).classList.remove('aiu-display--none');
   };
 
   this.close = (dataId) => {
     const modalId = dataId.target.dataset.modal || dataId.target.parentElement.dataset.modal;
-    document.getElementById(modalId).classList.add('dlu-display--none');
+    document.getElementById(modalId).classList.add('aiu-display--none');
   };
 }
 
 const
-  $modalButtons = document.querySelectorAll('.dlc-modal__button'),
-  $modalCloses = document.querySelectorAll('.dlc-modal__close'),
-  $modalBackgrounds = document.querySelectorAll('.dlc-modal__background'),
+  $modalButtons = document.querySelectorAll('.aic-o-modal__button'),
+  $modalCloses = document.querySelectorAll('.aic-o-modal__close'),
+  $modalBackgrounds = document.querySelectorAll('.aic-o-modal__background'),
   modal = new Modals();
 
 $modalButtons.forEach(($modalButton) => {
@@ -39,7 +39,7 @@ $modalBackgrounds.forEach(($modalBackground) => {
 
 ['click', 'keydown'].forEach((eventName) => {
   document.body.addEventListener(eventName, (e) => {
-    if (e.target && e.target.classList.contains('dlc-modal__button')) {
+    if (e.target && e.target.classList.contains('aic-o-modal__button')) {
       if (e.type === 'click') {
         modal.open(e);
       }
@@ -48,7 +48,7 @@ $modalBackgrounds.forEach(($modalBackground) => {
       }
     }
 
-    if (e.target && (e.target.classList.contains('dlc-modal__background') || e.target.parentElement.classList.contains('dlc-modal__close'))) {
+    if (e.target && (e.target.classList.contains('aic-o-modal__background') || e.target.parentElement.classList.contains('aic-o-modal__close'))) {
       if (e.type === 'click') {
         modal.close(e);
       }

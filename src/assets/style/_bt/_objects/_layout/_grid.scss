@@ -1,0 +1,25 @@
+// 
+// Basics 
+// 
+// Various Basics styles.
+// 
+// Styleguide Objects - Layout - Grid -
+// 
+
+.ail-grid {
+  display: grid;
+ // Full Page
+  &__full-page {
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  &__projects {
+
+  }
+
+  &__project {
+    
+  }
+}

@@ -45,16 +45,16 @@ export function DateInput() {
     // Layout Creation --------------------------------
     // `td` setup ---
     _datetimeTDLayout = (dayCount, selectedClass, month, yearInput) => `
-      <td class="dlc-input-field__calendar-cell-${dayCount}"><button class="dlc-button dlc-button--flat dlc-input-field__calendar-day ${selectedClass}" id="day-${dayCount}" data-day="${month}, ${dayCount}, ${yearInput}">${dayCount}</button></td>`,
+      <td class="aic-o-input-field__calendar-cell-${dayCount}"><button class="aic-o-button aic-o-button--flat aic-o-input-field__calendar-day ${selectedClass}" id="day-${dayCount}" data-day="${month}, ${dayCount}, ${yearInput}">${dayCount}</button></td>`,
 
     _calendarTDLayout = (dayCount, selectedClass, month, yearInput) => `
-      <td class="dlc-input-field__calendar-cell-${dayCount}"><button class="dlc-button dlc-button--flat dlc-input-field__calendar-day ${selectedClass}" id="day-${dayCount}" data-day="${month}, ${dayCount}, ${yearInput}">${dayCount}</button></td>`,
+      <td class="aic-o-input-field__calendar-cell-${dayCount}"><button class="aic-o-button aic-o-button--flat aic-o-input-field__calendar-day ${selectedClass}" id="day-${dayCount}" data-day="${month}, ${dayCount}, ${yearInput}">${dayCount}</button></td>`,
 
     _weekButtonTDLayout = (weekNumber, year) => `
-      <td class="dlc-input-field__calendar-cell-${weekNumber}"><button class="dlc-button dlc-button--flat dlc-input-field__calendar-week" id="week-${weekNumber}" data-week="${weekNumber}, ${year}">${weekNumber}</button></td>`,
+      <td class="aic-o-input-field__calendar-cell-${weekNumber}"><button class="aic-o-button aic-o-button--flat aic-o-input-field__calendar-week" id="week-${weekNumber}" data-week="${weekNumber}, ${year}">${weekNumber}</button></td>`,
 
     _weekTDLayout = dayCount => `
-      <td class="dlc-input-field__calendar-cell-${dayCount}" >${dayCount}</td>`,
+      <td class="aic-o-input-field__calendar-cell-${dayCount}" >${dayCount}</td>`,
 
     // Drop Down setup ---
     _yearDropDownLayout = (currentYear, yearSelect, yearInput) => {
@@ -108,14 +108,14 @@ export function DateInput() {
       for (let i = 0; i <= weeks; i++) {
         weekType = typeOfInput === 'week' ? _weekButtonTDLayout(howManyWeeks, yearInput) : '';
 
-        $calendarBody.innerHTML += `<tr class="dlc-input-field__calendar-row" id="cell-${i}">${weekType}`;
+        $calendarBody.innerHTML += `<tr class="aic-o-input-field__calendar-row" id="cell-${i}">${weekType}`;
 
         for (let d = 0; d < daysOfTheWeek.length; d++) {
           // If we change months then we want to make sure the selected class
           // stays on the correct input
 
           if (fauxInputDate !== '' && dayCount === parseInt(fauxInputDate[1], 10) && months[month] === months[fauxInputDate[0] - 1] && yearInput === fauxInputDate[2]) {
-            selectedClass = 'dlc-input-field__calendar-day--selected';
+            selectedClass = 'aic-o-input-field__calendar-day--selected';
           }
           else {
             selectedClass = '';
@@ -150,11 +150,11 @@ export function DateInput() {
 
     _createCustomCalendar = ($container, month, yearInput, currentYear, typeOfInput) => {
       const
-        $monthTitle = $container.querySelector('.dlc-input-field__month'),
-        $calendarHeader = $container.querySelector('.dlc-input-field__calendar-table-head tr'),
-        $calendarBody = $container.querySelector('.dlc-input-field__calendar-table-body'),
-        $yearSelect = $container.querySelector('.dlc-input-field__calendar-select-year'),
-        $fauxInput = $container.parentNode.querySelector('.dlc-input-field__input'),
+        $monthTitle = $container.querySelector('.aic-o-input-field__month'),
+        $calendarHeader = $container.querySelector('.aic-o-input-field__calendar-table-head tr'),
+        $calendarBody = $container.querySelector('.aic-o-input-field__calendar-table-body'),
+        $yearSelect = $container.querySelector('.aic-o-input-field__calendar-select-year'),
+        $fauxInput = $container.parentNode.querySelector('.aic-o-input-field__input'),
         fauxInputDate = $fauxInput.innerHTML !== '' ? $fauxInput.innerHTML.split('/') : '',
         monthsNameArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         daysOfTheWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
@@ -187,22 +187,22 @@ export function DateInput() {
         $bgLabel = document.createElement('div');
       document.body.append($bgBody);
       $container.parentNode.insertBefore($bgLabel, $container);
-      $bgBody.classList.add('dlc-input-field__calendar-bg');
-      $bgLabel.classList.add('dlc-input-field__calendar-bg');
+      $bgBody.classList.add('aic-o-input-field__calendar-bg');
+      $bgLabel.classList.add('aic-o-input-field__calendar-bg');
     };
 
   // These are public functions---
   this.Close = () => {
-    document.querySelectorAll('.dlc-input-field__custom-calendar').forEach(($calendar) => {
-      if ($calendar.classList.contains('dlu-display--block')) {
-        $calendar.classList.remove('dlu-display--block');
+    document.querySelectorAll('.aic-o-input-field__custom-calendar').forEach(($calendar) => {
+      if ($calendar.classList.contains('aiu-display--block')) {
+        $calendar.classList.remove('aiu-display--block');
       }
 
-      if ($calendar.parentNode.querySelector('.dlc-input-field__native').value === '') {
-        $calendar.parentNode.querySelector('.dlc-input-field__input-container').classList.remove('dlc-input-field--focused');
+      if ($calendar.parentNode.querySelector('.aic-o-input-field__native').value === '') {
+        $calendar.parentNode.querySelector('.aic-o-input-field__input-container').classList.remove('aic-o-input-field--focused');
       }
     });
-    document.querySelectorAll('.dlc-input-field__calendar-bg').forEach(($bg) => {
+    document.querySelectorAll('.aic-o-input-field__calendar-bg').forEach(($bg) => {
       $bg.remove();
     });
   };
@@ -210,34 +210,34 @@ export function DateInput() {
   this.GetValue = (e) => {
     const
       $this = e.target,
-      $calendar = !e.target.classList.contains('dlc-input-field__time') ? $this.parentNode.parentNode.parentNode.parentNode.parentNode : $this.parentNode.parentNode.parentNode,
+      $calendar = !e.target.classList.contains('aic-o-input-field__time') ? $this.parentNode.parentNode.parentNode.parentNode.parentNode : $this.parentNode.parentNode.parentNode,
       id = $calendar.id,
       $container = document.querySelector(`[data-calendarid="${id}"]`),
-      typeOfInput = !e.target.classList.contains('dlc-input-field__time') ? $container.querySelector('.dlc-input-field__native').getAttribute('type') : 'time';
+      typeOfInput = !e.target.classList.contains('aic-o-input-field__time') ? $container.querySelector('.aic-o-input-field__native').getAttribute('type') : 'time';
 
     if (typeOfInput === 'datetime-local') {
-      $calendar.querySelector('.dlc-input-field__time').setAttribute('data-date', $this.dataset.day);
+      $calendar.querySelector('.aic-o-input-field__time').setAttribute('data-date', $this.dataset.day);
     }
 
     if (typeOfInput === 'week') {
-      $this.parentNode.parentNode.classList.add('dlc-input-field__calendar-row--selected');
+      $this.parentNode.parentNode.classList.add('aic-o-input-field__calendar-row--selected');
     }
     else if (typeOfInput !== 'time') {
-      $this.classList.add('dlc-input-field__calendar--selected');
+      $this.classList.add('aic-o-input-field__calendar--selected');
     }
 
     switch (typeOfInput) {
       case 'date':
-        _setDateValue($container.querySelector('.dlc-input-field__native'), $container.querySelector('.dlc-input-field__input'), $this.dataset.day.split(', '));
-        $container.classList.add('dlc-input-field--focused');
+        _setDateValue($container.querySelector('.aic-o-input-field__native'), $container.querySelector('.aic-o-input-field__input'), $this.dataset.day.split(', '));
+        $container.classList.add('aic-o-input-field--focused');
         break;
       case 'time':
-        _setDateTimeValue($container.querySelector('.dlc-input-field__native'), $container.querySelector('.dlc-input-field__input.dlc-input-field__date'), $this.dataset.date.split(', '), $this.value);
-        $container.classList.add('dlc-input-field--focused');
+        _setDateTimeValue($container.querySelector('.aic-o-input-field__native'), $container.querySelector('.aic-o-input-field__input.aic-o-input-field__date'), $this.dataset.date.split(', '), $this.value);
+        $container.classList.add('aic-o-input-field--focused');
         break;
       case 'week':
-        _setWeekValue($container.querySelector('.dlc-input-field__native'), $container.querySelector('.dlc-input-field__input'), $this.dataset.week.split(', '));
-        $container.classList.add('dlc-input-field--focused');
+        _setWeekValue($container.querySelector('.aic-o-input-field__native'), $container.querySelector('.aic-o-input-field__input'), $this.dataset.week.split(', '));
+        $container.classList.add('aic-o-input-field--focused');
         break;
       default:
         break;
@@ -252,11 +252,11 @@ export function DateInput() {
     const
       $calendarContainer = document.getElementById($container.dataset.calendarid),
       $inputContainer = $container,
-      // $dateLabel = $calendarContainer.querySelector('.dlc-input-field__date-container'),
-      $nextMonthButton = $calendarContainer.querySelector('.dlc-input-field__calendar-next-month'),
-      $prevMonthButton = $calendarContainer.querySelector('.dlc-input-field__calendar-prev-month'),
-      $typeOfInput = $inputContainer.querySelector('.dlc-input-field__native').getAttribute('type'),
-      $yearSelect = $calendarContainer.querySelector('.dlc-input-field__calendar-select-year'),
+      // $dateLabel = $calendarContainer.querySelector('.aic-o-input-field__date-container'),
+      $nextMonthButton = $calendarContainer.querySelector('.aic-o-input-field__calendar-next-month'),
+      $prevMonthButton = $calendarContainer.querySelector('.aic-o-input-field__calendar-prev-month'),
+      $typeOfInput = $inputContainer.querySelector('.aic-o-input-field__native').getAttribute('type'),
+      $yearSelect = $calendarContainer.querySelector('.aic-o-input-field__calendar-select-year'),
       currentMonth = new Date().getMonth(),
       currentYear = new Date().getFullYear();
     let
@@ -300,7 +300,7 @@ export function DateInput() {
 
     // Since there is only one input box, we don't need to event delagate
     if ($typeOfInput === 'datetime-local') {
-      $calendarContainer.querySelector('.dlc-input-field__time').addEventListener('focusout', (e) => {
+      $calendarContainer.querySelector('.aic-o-input-field__time').addEventListener('focusout', (e) => {
         if (e.target.value !== null && e.target.getAttribute('data-date') !== null) {
           this.GetValue(e, 'datetimeCustom');
         }
@@ -315,13 +315,13 @@ export function DateInput() {
         else {
           $calendarContainer.style.marginTop = '-40px';
         }
-        $calendarContainer.classList.add('dlu-display--block');
+        $calendarContainer.classList.add('aiu-display--block');
         _BGSetup($calendarContainer);
       });
     });
 
     window.addEventListener('scroll', () => {
-      if ($calendarContainer.classList.contains('dlu-display--block') && !generalFunctions.detectViewWindow($container, $calendarContainer)) {
+      if ($calendarContainer.classList.contains('aiu-display--block') && !generalFunctions.detectViewWindow($container, $calendarContainer)) {
         $calendarContainer.style.marginTop = '-300px';
       }
       else {
