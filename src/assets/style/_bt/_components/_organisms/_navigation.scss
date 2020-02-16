@@ -1,0 +1,23 @@
+// 
+// Navigation
+// 
+// Navigation styles
+// 
+// Styleguide Components - Organisms - Navigation
+// 
+
+.aic-o-navigation {
+  &__link {
+    font-family: map-get($map: $fontFamily, $key: 'title');
+    font-size: map-deep-get($size, 'font-title', 'font-size');
+    line-height: 100px;
+    color: map-get($map: $colors, $key: 'flatblack');
+    border-bottom: thin solid map-get($map: $colors, $key: 'flatblack');
+    padding-bottom: 8px;
+
+    &:hover {
+      border-color: map-get($map: $colors, $key: 'flatblack');
+      box-shadow: 0 4px 0 0 map-get($map: $colors, $key: 'flatblack');
+    }
+  }
+}

@@ -5,33 +5,26 @@
 
 export function Buttons() {
   const
-    _addLoader = ($button) => {
-      const $label = $button.querySelector('.dlc-button__label');
-      $button.classList.add('dlc-button--loader');
-      $button.setAttribute('disabled', 'disabled');
-      $label.classList.add('dlu-display--none');
-      $button.innerHTML += '<span class="dlc-button__label dlc-button__label-loader"><progress class="dlc-loader--circular-default dlc-loader--circular-indeterminate"></progress></span>';
+    _navOpen = ($button) => {
+      $button.classList.add('aic-a-button--open');
     },
-
-    _removeLoader = ($button) => {
-      const $label = $button.querySelector('.dlc-button__label');
-      $button.classList.remove('dlc-button--loader');
-      $button.removeAttribute('disabled');
-      $label.classList.remove('dlu-display--none');
-      $button.querySelector('.dlc-button__label-loader').remove();
+    _navClose = ($button) => {
+      $button.classList.remove('aic-a-button--open');
+    },
+    _navEvent = ($button) => {
+      $button.addEventListener('click', (e) => {
+        if (e.currentTarget.classList.contains('aic-a-button--open')) {
+          _navClose(e.currentTarget);
+        }
+        else {
+          _navOpen(e.currentTarget);
+        }
+      });
     };
 
-  this.ButtonGroup = ($button, e) => {
-    e.currentTarget.classList.add('dlc-button-grid--checked');
-  };
-
-  this.Loader = ($button, addRemove) => {
-    if ($button.classList.contains('dljs-button--loader-click') && addRemove === 'add') {
-      _addLoader($button);
-    }
-
-    if ($button.classList.contains('dljs-button--loader-click') && $button.classList.contains('dlc-button--loader') && addRemove === 'remove') {
-      _removeLoader($button);
+  this.Init = ($button) => {
+    if ($button.classList.contains('aic-a-button--navigation')) {
+      _navEvent($button);
     }
   };
 

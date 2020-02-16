@@ -1,0 +1,30 @@
+// 
+// Text
+// 
+// Utility of the ITCSS
+// 
+// Styleguide Utility - Text
+//
+
+.aiu-text {
+
+  &-size {
+    @for $i from 8 to 60 {
+      &--#{$i} {
+        font-size: #{$i}px !important;
+      }
+    }
+  }
+
+  &-line-height {
+    @for $i from 0 to 60 {
+      &--#{$i} {
+        line-height: #{$i}px !important;
+      }
+    }
+
+    &--normal {
+      line-height: normal !important;
+    }
+  }
+}

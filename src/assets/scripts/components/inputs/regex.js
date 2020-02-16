@@ -24,12 +24,12 @@ export function Regex(emailMessage = '', phoneMessage = '') {
         message = m;
       }
 
-      if ($container.classList.contains('dlc-input-helper')) {
-        $container.classList.add('dlc-input-helper--error');
-        $container.querySelector('.dlc-input-helper__helper').innerHTML = message;
+      if ($container.classList.contains('aic-o-input-helper')) {
+        $container.classList.add('aic-o-input-helper--error');
+        $container.querySelector('.aic-o-input-helper__helper').innerHTML = message;
       }
       else {
-        $container.classList.add('dlc-input-field--error');
+        $container.classList.add('aic-o-input-field--error');
       }
     },
 
@@ -39,12 +39,12 @@ export function Regex(emailMessage = '', phoneMessage = '') {
     _removeErrorClass = (input) => {
       const $container = input.target.parentNode.parentNode;
 
-      if ($container.classList.contains('dlc-input-helper')) {
-        $container.classList.remove('dlc-input-helper--error');
-        $container.querySelector('.dlc-input-helper__helper').innerHTML = '';
+      if ($container.classList.contains('aic-o-input-helper')) {
+        $container.classList.remove('aic-o-input-helper--error');
+        $container.querySelector('.aic-o-input-helper__helper').innerHTML = '';
       }
       else {
-        $container.classList.remove('dlc-input-field--error');
+        $container.classList.remove('aic-o-input-field--error');
       }
     };
 

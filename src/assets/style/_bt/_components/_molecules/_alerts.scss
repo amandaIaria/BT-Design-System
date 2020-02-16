@@ -1,0 +1,70 @@
+// 
+// Alerts 
+// 
+// Various Alerts styles.
+// 
+// Styleguide Components - Molecules - Alerts
+// 
+
+.aic-o-alerts {
+  box-sizing: border-box;
+
+  &__container {
+    align-items: center;
+    width: 100%;
+    padding: 2px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-gap: 8px;
+  }
+
+  &__content {
+    text-align: justify;
+  }
+
+  &__close {
+    text-align: right;
+
+    .aic-a-button--alerts {
+      padding: 40px 32px;
+      background: none;
+      border-color: transparent;
+      cursor: pointer;
+      @include border-radius(0);
+      @include transition($ai-transition);
+
+      &:active,
+      &:focus {
+        outline: none;
+        top: 0;
+      }
+
+      &:hover {
+        background-color: map-get($map: $colors, $key: 'blue1' );
+        i {color: map-get($map: $colors, $key: 'flatblack' );}
+      }
+    }
+  }
+
+  &__icon {
+    padding: 40px 32px;
+  }
+
+  &--error {
+    color: map-get($map: $colors, $key: 'white' );
+    background: map-get($map: $stateColors, $key: 'error' );
+
+    i {color: map-get($map: $colors, $key: 'white' );}
+  
+  }
+
+  &--information {
+    color: map-get($map: $colors, $key: 'flatblack' );
+    background: map-get($map: $stateColors, $key: 'info' );
+  }
+
+  &--success {
+    color: map-get($map: $colors, $key: 'flatblack' );
+    background: map-get($map: $stateColors, $key: 'success' );
+  }
+}

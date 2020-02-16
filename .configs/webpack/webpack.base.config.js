@@ -145,5 +145,16 @@ module.exports = {
           interpolate: true,
         }
       }),
+      new HtmlWebpackPlugin({
+        template: './src/components/full-page.html',
+        filename: 'full-page.html',
+        title: 'Boilerplate - Full Page',
+        inject: true,
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          interpolate: true,
+        }
+      }),
     ]
 };

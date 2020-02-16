@@ -1,0 +1,33 @@
+// 
+// Spacing
+// 
+// Utility of the ITCSS
+// 
+// Styleguide Utility - Spacing
+//
+
+.aiu-color {
+  &-background {
+    @each $key, $var in $colors {
+      &--#{$key} {
+        background-color: $var !important;
+      }
+    }
+  }
+
+  &-text {
+    @each $key, $var in $colors {
+      &--#{$key} {
+        color: $var !important;
+      }
+    }
+  }
+
+  &-border {
+    @each $key, $var in $colors {
+      &--#{$key} {
+        border-color: $var !important;
+      }
+    }
+  }
+}

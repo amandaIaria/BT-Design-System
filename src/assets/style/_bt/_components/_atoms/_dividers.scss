@@ -1,0 +1,23 @@
+// 
+// Dividers 
+// 
+// Various Divider styles.
+// 
+// Styleguide Components - Atoms - Dividers
+// 
+
+.aic-a-dividers {
+  &--one {
+    @extend hr;
+  }
+
+  &--two {
+    border-bottom: 1px solid map-get($map: $colors, $key: 'flatblack');
+    margin: 16px 0;
+  }
+
+  &--three {
+    border-bottom: thin solid transparent;
+    margin: 16px 0;
+  }
+}

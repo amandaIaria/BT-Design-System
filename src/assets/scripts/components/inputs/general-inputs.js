@@ -22,7 +22,6 @@ export function Inputs() {
       switch (e.type) {
         case 'click':
           $thisLabel.add('aic-m-input-field--focused');
-          console.log($thisLabel);
           break;
         case 'focusin':
           $thisLabel.add('aic-m-input-field--focused');
@@ -134,9 +133,10 @@ export function Inputs() {
       }
     },
     /* eslint-disable */
-    _textareaAutoGrow = (textarea) => {
-      if (textarea.scrollHeight > textarea.clientHeight) {
-        textarea.style.height = textarea.scrollHeight + "px";
+    _textareaAutoGrow = ($textarea, $label) => {
+      if ($textarea.scrollHeight > $textarea.clientHeight) {
+        $textarea.style.height = `${$textarea.scrollHeight}px`;
+        $label.style.height = `${$textarea.scrollHeight + 40}px`;
       }
     };
     /* eslint-enable */
@@ -188,7 +188,7 @@ export function Inputs() {
 
     if ($container.querySelector('.aic-m-input-field__textarea') !== null) {
       $container.querySelector('.aic-m-input-field__textarea').addEventListener('keyup', (e) => {
-        _textareaAutoGrow(e.currentTarget);
+        _textareaAutoGrow(e.currentTarget, $container);
       });
     }
 

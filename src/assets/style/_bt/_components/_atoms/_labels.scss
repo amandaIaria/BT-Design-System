@@ -32,6 +32,7 @@
     font-size: 16px;
     font-weight: 400;
     left: 16px;
+    top: 16px;
     overflow: hidden;
     pointer-events: none;
     position: absolute;
@@ -57,7 +58,7 @@
 
   &__textarea-container {
     display: block;
-    min-height: 100px;
+    min-height: 91px;
     overflow: inherit;
     position: relative;
   }
@@ -67,7 +68,7 @@
     .aic-m-select-field__label {
       font-size: 10px;
       line-height: $ai-labels-mixincontainer-lh;
-      @include transform(translateY(-13px) translateX(0));
+      @include transform(translateY(-6px) translateX(0));
     }
   }
 

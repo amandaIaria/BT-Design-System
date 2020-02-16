@@ -7,7 +7,7 @@ export default function Sidebar() {
   const
     _addToTopButton = () => {
       const $button = document.createElement('button');
-      $button.classList.add('dlc-button', 'dlu-border-radius--six', 'dljs-button--to-top', 'dlc-button--primary', 'dlc-button--solid', 'dlu-ripple', 'dlu-ripple--light', 'dlu-space--p16', 'dlu-box-shadow--one');
+      $button.classList.add('aic-a-button', 'aiu-border-radius--six', 'aijs-button--to-top', 'aic-a-button--primary', 'aic-a-button--solid', 'aiu-ripple', 'aiu-ripple--light', 'aiu-space--p16', 'aiu-box-shadow--one');
       $button.style.bottom = '16px';
       $button.style.right = '16px';
       $button.style.position = 'fixed';
@@ -16,17 +16,17 @@ export default function Sidebar() {
     },
 
     _nav = ($link) => {
-      if ($link.classList.contains('dlc-nav-side--active')) {
-        $link.classList.remove('dlc-nav-side--active');
+      if ($link.classList.contains('aic-a-nav-side--active')) {
+        $link.classList.remove('aic-a-nav-side--active');
       }
       else {
-        $link.classList.add('dlc-nav-side--active');
+        $link.classList.add('aic-a-nav-side--active');
       }
     },
 
     _removeAddToTop = () => {
-      document.querySelector('.dlc-footer').style.marginTop = '0';
-      document.querySelector('.dljs-button--to-top').remove();
+      document.querySelector('.aic-a-footer').style.marginTop = '0';
+      document.querySelector('.aijs-button--to-top').remove();
     },
 
     _testHeight = ($container) => ($container.offsetHeight > window.innerHeight), // eslint-disable-line
@@ -41,7 +41,7 @@ export default function Sidebar() {
   this.CheckVisibility = (element) => (element.currentStyle ? element.currentStyle.visibility : getComputedStyle(element).visibility); // eslint-disable-line
 
   this.SetActiveClassOnStatic = ($sidenav) => {
-    if ($sidenav.classList.contains('dljs-nav-side--static')) {
+    if ($sidenav.classList.contains('aijs-nav-side--static')) {
       const
         url = document.location.href,
         pageArray = url.split('/'),
@@ -56,10 +56,10 @@ export default function Sidebar() {
           $parent = link.parentNode.parentNode.parentNode; // eslint-disable-line
 
         if (pageName === linkName && pageArray[length] !== '') {
-          link.classList.add('dlc-nav-side--active');
+          link.classList.add('aic-a-nav-side--active');
 
-          if ($parent.querySelector('a').href !== '' && $parent.querySelector('a').classList.contains('dlc-nav-side__link-parent')) {
-            $parent.querySelector('a').classList.add('dlc-nav-side--active');
+          if ($parent.querySelector('a').href !== '' && $parent.querySelector('a').classList.contains('aic-a-nav-side__link-parent')) {
+            $parent.querySelector('a').classList.add('aic-a-nav-side--active');
             this.TestForScreenHeight($sidenav);
           }
         }
@@ -75,7 +75,7 @@ export default function Sidebar() {
 
       _nav(e.currentTarget);
 
-      if ($container.classList.contains('dlc-nav-side')) {
+      if ($container.classList.contains('aic-a-nav-side')) {
         this.TestForScreenHeight($container);
       }
     });
@@ -87,13 +87,13 @@ export default function Sidebar() {
 
   this.TestForScreenHeight = ($sb) => {
     setTimeout(() => {
-      const checkForButton = document.body.contains(document.querySelector('.dljs-button--to-top'));
+      const checkForButton = document.body.contains(document.querySelector('.aijs-button--to-top'));
       if (_testHeight($sb) && this.CheckVisibility($sb) !== 'hidden') {
-        if ($sb.classList.contains('dlu-position--fixed')) $sb.classList.remove('dlu-position--fixed');
+        if ($sb.classList.contains('aiu-position--fixed')) $sb.classList.remove('aiu-position--fixed');
         if (!checkForButton) _addToTopButton();
       }
       else {
-        $sb.classList.add('dlu-position--fixed');
+        $sb.classList.add('aiu-position--fixed');
         if (checkForButton) _removeAddToTop();
       }
     }, 50);
@@ -101,10 +101,10 @@ export default function Sidebar() {
 }
 
 const
-  $sidebar = document.querySelector('.dlc-nav-side'),
+  $sidebar = document.querySelector('.aic-a-nav-side'),
   sidebar = new Sidebar();
 
-$sidebar.querySelectorAll('.dlc-nav-side__link').forEach(($sidebarLink) => {
+$sidebar.querySelectorAll('.aic-a-nav-side__link').forEach(($sidebarLink) => {
   sidebar.SetUp($sidebar, $sidebarLink);
 });
 
