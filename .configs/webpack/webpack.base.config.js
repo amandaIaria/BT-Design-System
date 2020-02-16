@@ -5,8 +5,7 @@ const autoprefixer = require('autoprefixer');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: [
-      '@babel/polyfill',
+    entry: [ 
       path.join(__dirname, '../../src/assets/app.js'),
       path.join(__dirname, '../../src/assets/style/app.scss')
     ],
