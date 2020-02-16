@@ -163,12 +163,6 @@
     color: map-get($map: $colors, $key: 'white');
     @include box-shadow(inset 0px -4px 0px 0px map-get($map: $colors, $key: 'blue3'));
 
-    // &:hover {
-    //   border-color: map-get($map: $colors, $key: 'blue3');
-    //   background: map-get($map: $colors, $key: 'blue3');
-    //   @include box-shadow(0px 4px 0px 0px map-get($map: $colors, $key: 'blue2'));
-    // }
-
     &:active {
       @include box-shadow(0px 0px 0px 0px map-get($map: $colors, $key: 'blue2'));
     }

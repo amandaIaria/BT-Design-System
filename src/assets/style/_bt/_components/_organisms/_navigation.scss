@@ -1,7 +1,13 @@
+// 
+// Navigation
+// 
+// Navigation styles
+// 
+// Styleguide Components - Organisms - Navigation
+// 
 
 .aic-o-navigation {
   &__link {
-    //@extend .aiu-text--title;
     font-family: map-get($map: $fontFamily, $key: 'title');
     font-size: map-deep-get($size, 'font-title', 'font-size');
     line-height: 100px;
