@@ -3,7 +3,7 @@
 // 
 // Various Grid styles.
 // 
-// Styleguide Objects - Layout - Grid
+// Style Guide Objects - Layout - Grid
 // 
 
 .ail-grid {
@@ -15,37 +15,61 @@
     width: 100vw;
   }
 
-  &__projects {
-
-  }
-
-  &__project {
-    
-  }
-
   &__row {
     display: flex;
     justify-content: space-between;
 
     @supports (display: grid) {
       display: grid;
-      // grid-auto-rows: minmax(120px, auto);
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-columns: repeat($ai-totalCol, minmax(0, 1fr));
       grid-gap: $margin;
       justify-content: none;
+
+      @media (max-width: 575px) {
+        grid-gap: #{$margin / 2};
+      }
     }
   }
 
   &__col {
-    @for $i from 1 to $ai-totalCol {
+    @media (max-width: 575px) {
+      flex: 100% !important;
+
+      @supports (display: grid) {
+        grid-column-end: span 12 !important;
+      }
+    }
+
+    @for $i from 1 through $ai-totalCol {
+      $percentage: percentage($i / $ai-totalCol);
+
       &--#{$i} {
-        flex: $i;
-        
+        // flex: $i;
+        flex: calc(#{$percentage} - #{$margin});
+        padding: 0 $margin;
+        margin: 0 #{$margin / 2};
+
+        @media (max-width: 575px) {
+          flex: calc(#{$percentage} - #{$margin / 2});
+          padding: 0 #{$margin / 4};
+          margin: 0 #{$margin / 4};
+        }
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
         @supports (display: grid) {
           flex: none;
+          width: auto;
+          grid-column-end: span $i;
+          margin: 0;
         }
       }
-
     }
   }
 }
