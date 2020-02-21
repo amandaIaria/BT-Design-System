@@ -1,0 +1,25 @@
+// 
+// Full Page
+// 
+// Full Page styles
+// 
+// Styleguide Components - Templates - Full Page
+// 
+
+.ait-full-page {
+  &__section {
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  &__content {
+    &--generic {
+      text-align: center;
+    }
+
+    &--projects {
+      grid-template-columns: ;
+    }
+  }
+}

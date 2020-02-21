@@ -1,0 +1,16 @@
+// 
+// Display
+// 
+// Utility of the ITCSS
+// 
+// Styleguide Utility - Display
+//
+
+.aiu-display {
+  &--none { display: none;}
+  &--grid { display: grid;}
+  &--flex { display: flex;}
+  &--block { display: block;}
+  &--table { display: table;}
+  &--table-cell { display: table-cell;}
+}

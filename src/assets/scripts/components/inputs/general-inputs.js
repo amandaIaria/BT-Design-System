@@ -21,6 +21,7 @@ export function Inputs() {
 
       switch (e.type) {
         case 'click':
+          console.log('check');
           $thisLabel.add('aic-m-input-field--focused');
           break;
         case 'focusin':
