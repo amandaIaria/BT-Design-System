@@ -1,0 +1,10 @@
+.aiu-align {
+  &--center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--vert-middle {
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,17 @@
+.aiu-display {
+  &--grid {
+    display: grid;
+  }
+
+  &--block {
+    display: block;
+  }
+
+  &--inline {
+    display: inline;
+  }
+
+  &--none {
+    display: none;
+  }
+}
