@@ -15,3 +15,13 @@
     display: none;
   }
 }
+
+.aiu-position {
+  &--fixed {
+    position: fixed;
+  }
+
+  &--sticky {
+    position: sticky;
+  }
+}
