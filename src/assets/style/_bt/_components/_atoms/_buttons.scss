@@ -110,6 +110,9 @@
     box-sizing: content-box;
     background: map-get($map: $colors, $key: 'blue1' );
     border-color: map-get($map: $colors, $key: 'blue1');
+    position: fixed;
+    right: 0;
+    z-index: 9999;
     @include box-shadow(inset 0px -4px 0px 0px map-get($map: $colors, $key: 'blue2'));
 
     &:active {

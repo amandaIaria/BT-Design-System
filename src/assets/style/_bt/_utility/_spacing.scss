@@ -7,7 +7,7 @@
 //
 
 .aiu-spacing {
-
+  &--m-auto { margin: auto; }
   @for $i from 0 to 60 {
     &--m#{$i} {margin: #{$i}px !important}
     &--m-top#{$i} {margin-top: #{$i}px !important}
