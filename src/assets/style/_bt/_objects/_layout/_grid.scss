@@ -71,5 +71,50 @@
         }
       }
     }
+    
+    @each $name, $amount in $breakpoints {
+      @debug $amount;
+
+      @for $i from 1 through $ai-totalCol {
+        $percentage: percentage($i / $ai-totalCol);
+
+        &--#{$i}-#{$name} {
+          // flex: $i;
+          flex: calc(#{$percentage} - #{$margin});
+          padding: 0 $margin;
+          margin: 0 #{$margin / 2};
+
+          @supports (display: grid) {
+            flex: none;
+            width: auto;
+            grid-column-end: span $ai-totalCol;
+            margin: 0;
+          }
+
+          @media (min-width: #{$amount}) {
+            flex: calc(#{$percentage} - #{$margin / 2});
+            padding: 0 #{$margin / 4};
+            margin: 0 #{$margin / 4};
+
+            @supports (display: grid) {
+              flex: none;
+              width: auto;
+              grid-column-end: span $i;
+              margin: 0;
+            }
+          }
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+         
+        }
+      }
+    }
   }
 }
