@@ -25,3 +25,17 @@
     position: sticky;
   }
 }
+
+.aiu-float {
+  &--left {
+    float: left;
+  }
+
+  &--right {
+    float: right;
+  }
+
+  &--none {
+    float: none;
+  }
+}
