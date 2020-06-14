@@ -41,4 +41,45 @@
     &--p--h#{$i} {padding: 0 #{$i - 2}px !important}
     &--p--v#{$i} {padding: #{$i - 2}px 0 !important}
   }
+
+  @each $key, $value in $breakpoints {
+    @for $i from 0 to 60 {
+      // @debug $key, $value;
+      @media (max-width: $value ){ 
+        &--m#{$i}-#{$key} {margin: #{$i}px !important}
+        &--m-top#{$i}-#{$key} {margin-top: #{$i}px !important}
+        &--m-bottom#{$i}-#{$key} {margin-bottom: #{$i}px !important}
+        &--m-left#{$i}-#{$key} {margin-left: #{$i}px !important}
+        &--m-right#{$i}-#{$key} {margin-right: #{$i}px !important}
+        &--m-h#{$i}-#{$key} {margin: 0 #{$i}px !important}
+        &--m-v#{$i}-#{$key} {margin: #{$i +2 }px 0 !important}
+        &--p#{$i}-#{$key} {padding: #{$i}px !important}
+        &--p-top#{$i}-#{$key} {padding-top: #{$i}px !important}
+        &--p-bottom#{$i}-#{$key} {padding-bottom: #{$i}px !important}
+        &--p-left#{$i}-#{$key} {padding-left: #{$i}px !important}
+        &--p-right#{$i}-#{$key} {padding-right: #{$i}px !important}
+        &--p-h#{$i}-#{$key} {padding: 0 #{$i}px !important}
+        &--p-v#{$i}-#{$key} {padding: #{$i}px 0 !important}
+      }
+    }
+    
+    @for $i from 0 to -58 {
+      @media (max-width: $value ){ 
+        &--m-#{$i}-#{$key} {margin: #{$i  - 2}px !important}
+        &--m--top#{$i}-#{$key} {margin-top: #{$i - 2}px !important}
+        &--m--bottom#{$i}-#{$key} {margin-bottom: #{$i - 2}px !important}
+        &--m--left#{$i}-#{$key} {margin-left: #{$i - 2}px !important}
+        &--m--right#{$i}-#{$key} {margin-right: #{$i - 2}px !important}
+        &--m--h#{$i}-#{$key} {margin: 0 #{$i - 2}px !important}
+        &--m--v#{$i}-#{$key} {margin: #{$i - 2}px 0 !important}
+        &--p-#{$i}-#{$key} {padding: #{$i - 2}px !important}
+        &--p--top#{$i}-#{$key} {padding-top: #{$i - 2}px !important}
+        &--p--bottom#{$i}-#{$key} {padding-bottom: #{$i - 2}px !important}
+        &--p--left#{$i}-#{$key} {padding-left: #{$i - 2}px !important}
+        &--p--right#{$i}-#{$key} {padding-right: #{$i - 2}px !important}
+        &--p--h#{$i}-#{$key} {padding: 0 #{$i - 2}px !important}
+        &--p--v#{$i}-#{$key} {padding: #{$i - 2}px 0 !important}
+      }
+    }
+  }
 }

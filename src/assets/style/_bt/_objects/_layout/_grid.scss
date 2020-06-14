@@ -74,8 +74,6 @@
     }
     
     @each $name, $amount in $breakpoints {
-      @debug $amount;
-
       @for $i from 1 through $ai-totalCol {
         $percentage: percentage($i / $ai-totalCol);
 
