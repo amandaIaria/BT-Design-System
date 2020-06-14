@@ -54,7 +54,5 @@ p {
   font-family: map-get($map: $fontFamily, $key: 'base'), Arial, Helvetica, sans-serif;
   font-size: map-deep-get($size, 'font-base', 'font-size');
   line-height: map-deep-get($size, 'font-base', 'line-height');
-  padding: 16px;
-  margin-left: -16px;
-  margin-right: -16px;
+  padding-bottom: 16px;
 }
