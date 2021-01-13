@@ -69,6 +69,9 @@
 
   &--error {
     @extend .aiu-states-error;
+    .aic-o-input-helper__helper {
+      @extend .aiu-states-error;
+    }
   }
 
   &#{$self}--textarea#{$self} {

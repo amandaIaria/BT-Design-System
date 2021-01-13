@@ -32,7 +32,7 @@
     font-size: 16px;
     font-weight: 400;
     left: 16px;
-    top: 13px;
+    top: 16px;
     overflow: hidden;
     pointer-events: none;
     position: absolute;
@@ -94,7 +94,8 @@
 }
 
 .aiu-states-error .aic-a-label--bordered {
-  border-color: $error-color;
+  border-color: $error-color !important;
+  @include box-shadow(inset 0px 0px 0px 4px $error-color);
 
   &:focus,
   &:focus-within,
